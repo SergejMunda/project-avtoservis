@@ -1,29 +1,15 @@
-# README #
+# AVTOSERVIS #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Prijatelj ki ima avtoservis nas je prosil, da mu naredimo aplikacijo, 
+ki mu bo omogočala beleženje trenutne zaloge delov v skladišču, kdaj je
+stranka naročena in kaj je potrebno dokupiti. Sedaj mora to narediti vse 
+na roke in mu kdaj in kdaj zmanka zaloge ali pa sta dve stranki naroceni ob
+isti uri, zato bi rad da se mu ta proces avtomatizira.
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+Aplikacija mora podpirati:
+* Prijavo uslužbencem
+* Seznam zaloge (izdelek, opis, količina)
+* Seznam kaj je potrbno kupiti (izdelek, količina)
+* Izpis naročenih strank
+* Kontaktni obrazec
+* Avtomatsko naročanje
