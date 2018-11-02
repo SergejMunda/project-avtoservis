@@ -1,16 +1,17 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Contact</title>
+    <link href="https://cdn.mapfit.com/v2-4/assets/css/mapfit.css" rel='stylesheet' />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>Login</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -43,43 +44,44 @@
         </nav>
     </header>
 
-    <div class="bg-img"></div>
 
+    <div class="row">
+        <div class='contact col-lg-5 '>
+            <form action='#' class='contact-form'>
+                <div class='email-group row'>
+                    <label class="login-label col-lg-5" for='email'>E mail:</label>
+                    <input type='email' name='email' class='input col'>
+                </div>
 
-    <div class='register-form'>
-        <form action='#' class='login-form-inside'>
-            <div class='first-name-group'>
-                <label class="login-label" for='firstName'>First name:</label>
-                <input type='text' name='firstName' class='login-input'>
-            </div>
+                <div class='message-group row'>
+                    <label class="login-label col-lg-5" for='message'>Message:</label>
+                    <textarea name="message" class="input col"></textarea>
+                </div>
+                <button class='btn btn-primary'>Send</button>
+            </form>
+        </div>
 
-            <div class='last-name-group'>
-                <label class="login-label" for='lastName'>Last name:</label>
-                <input type='text' name='lastName' class='login-input'>
-            </div>
-
-            <div class='email-group'>
-                <label class="login-label" for='email'>E mail:</label>
-                <input type='email' name='email' class='login-input'>
-            </div>
-
-            <div class='pass-group'>
-                <label class="login-label" for='pass'>Password:</label>
-                <input type='password' name='pass' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class='login-input'>
-            </div>
-
-            <div class='pass-confirm-group'>
-                <label class="login-label" for='passConf'>Confirm password:</label>
-                <input type='password' name='passConf' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class='login-input'>
-            </div>
-            <button class='btn btn-primary'>Register</button>
-        </form>
+        <div id="mapfit" class="col align-self-end" style="width: 100%; height: 435px;"></div>
     </div>
 
+    <!-- maps -->
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/tetragon.js"></script>
+    <script src="https://cdn.mapfit.com/v2-4/assets/js/mapfit.js"></script>
+    <script>
+        // initialize map
+        let map = mapfit.MapView('mapfit', {
+            theme: 'day'
+        });
 
+        // add marker
+        myMarker = mapfit.Marker([46.050260, 14.468920])
+        map.setCenter(myMarker)
+        map.addMarker(myMarker)
 
-
-    <!-- Optional JavaScript -->
+        map.setZoom(13);
+    </script>
+    </div>
+    <!-- Optional JavaScript for Bootstrap -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -87,6 +89,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
