@@ -1,0 +1,20 @@
+.contact {
+    padding: 2em;
+}
+
+.input {
+    border: 1px solid #000000
+}
+
+textarea {
+    vertical-align: top;
+}
+
+
+.contact-form {
+    margin: 10px;
+}
+
+.contact-form .row {
+    margin-bottom: 10px;
+}
