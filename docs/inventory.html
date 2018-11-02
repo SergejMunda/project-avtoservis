@@ -1,17 +1,16 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Inventory</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -49,27 +48,44 @@
         </nav>
     </header>
 
-    <!-- content change for page -->
-    <div class="bg-img"></div>
+    <div class='third-r'>
+<table class="table table-hover prva-tabela">
+<caption>Current inventory</caption>
+  <tr>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Quantity</th>
+    <th class="empty"></th>
+  </tr>
+  <tr>
+    <td>Gume letne</td>
+    <td>letne avtomobilske pnevmatike</td>
+    <td>1</td>
+        <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
+  </tr>
+  <tr>
+    <td>Gume zimske</td>
+    <td>zimske avtomobilske pnevmatike</td>
+    <td>1</td>
+    <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
+  </tr>
+  <tr>
+    <td>Olje</td>
+    <td>motorno olje</td>
+    <td>100</td>
+    <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
+  </tr>
+  <tr>
+      <td class="edit-buttons"><button class='add'>Add</button></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      
+  </tr>
+  </table>
+</div>
 
-    <div class='login-form'>
-        <form action='#' class='login-form-inside'>
-            <div class='email-group'>
-                <label class="login-label" for='email'>E mail:</label>
-                <input type='email' name='email' class='login-input'>
-            </div>
-
-            <div class='pass-group'>
-                <label class="login-label" for='pass'>Password:</label>
-                <input type='password' name='pass' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class='login-input'>
-            </div>
-            <button class='btn btn-primary'>Login</button>
-            <a href="register.html" class="btn btn-primary">Register</a>
-        </form>
-    </div>
-
-
-
+    
     <!-- Optional JavaScript for Bootstrap -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -78,6 +94,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
