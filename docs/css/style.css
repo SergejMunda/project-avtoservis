@@ -1,3 +1,18 @@
+.scrollable {
+    overflow-y: scroll;
+    bottom:0;
+    
+  
+}
+
+#list{
+    overflow-y:visible;
+}
+
+#detail{
+    display: none;
+}
+
 .contact {
     padding: 2em;
 }

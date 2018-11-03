@@ -47,44 +47,103 @@
             </div>
         </nav>
     </header>
-
-    <div class='third-r'>
-<table class="table table-hover prva-tabela">
-<caption>Current inventory</caption>
-  <tr>
-    <th>Item</th>
-    <th>Description</th>
-    <th>Quantity</th>
-    <th class="empty"></th>
-  </tr>
-  <tr>
-    <td>Gume letne</td>
-    <td>letne avtomobilske pnevmatike</td>
-    <td>1</td>
-        <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
-  </tr>
-  <tr>
-    <td>Gume zimske</td>
-    <td>zimske avtomobilske pnevmatike</td>
-    <td>1</td>
-    <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
-  </tr>
-  <tr>
-    <td>Olje</td>
-    <td>motorno olje</td>
-    <td>100</td>
-    <td class="edit-buttons"><button class='edit'>Edit</button><button >Delete</button></td>
-  </tr>
-  <tr>
-      <td class="edit-buttons"><button class='add'>Add</button></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      
-  </tr>
-  </table>
-</div>
-
+    <div class='container-fluid'>
+        <div class='row main-content'>
+            <div class='col-xs-12 col-md-12 col-sm-12' id="list">
+                <div class="scrollable">
+                     <div class='third-r'>
+                        <table class="table table-hover prva-tabela">
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                           <script>
+                              $(document).ready(function(){
+                                    $(".line").click(function(){
+                                        $("#detail").toggle();
+                                        $("#list").toggleClass("col-xs-6 col-md-5 col-sm-5 col-xs-12 col-md-12 col-sm-12");
+                                        $("#detail").toggleClass("col-xs-6 col-md-7 col-sm-7 scrollable") ;
+                                    });
+                            });
+                           </script> 
+                            
+                           <caption>Current inventory</caption>
+                              <tr>
+                                <th>Item</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th class="empty"></th>
+                              </tr>
+                              <tr class="line">
+                                <td>Gume letne</td>
+                                <td>letne avtomobilske pnevmatike</td>
+                                <td>1</td>
+                                <td class="edit-buttons">
+                                    <button class='btn'>Edit</button>
+                                    <button class='btn'>Delete</button>
+                                </td>
+                              </tr>
+                              <tr class="line">
+                                <td>Gume zimske</td>
+                                <td>zimske avtomobilske pnevmatike</td>
+                                <td>1</td>
+                                <td class="edit-buttons">
+                                    <button class='btn'>Edit</button>
+                                    <button class='btn' >Delete</button>
+                                </td>
+                              </tr>
+                              <tr class="line">
+                                <td>Olje</td>
+                                <td>motorno olje</td>
+                                <td>100</td>
+                                <td class="edit-buttons">
+                                    <button class='btn'>Edit</button>
+                                    <button class='btn' >Delete</button></td>
+                              </tr>
+                             
+                              <tr>
+                                  <td class="edit-buttons"><button class='btn'>Add</button></td>
+                                 
+                                  
+                              </tr>
+                        </table>
+                    </div>
+                </div>    
+            </div>
+             <div class='col-xs-6 col-md-7 col-sm-7 scrollable' id="detail">
+               <h3>Product details</h2> 
+               <div class="card">
+                   <img class="card-img-top" src="images/michelin.jpg" alt ="Card image">
+                   <div class="card-body">
+                       <h4 class="card-title">Michelin pnevmatike</h4>
+                       <table class="table table-striped detai tabela">
+                           <tr>
+                               <th>Širina v mm</th>
+                               <td>165</td>
+                            </tr>
+                            <tr>
+                               <th>Višina glede na širino v %</th>
+                               <td>65</td>
+                            </tr>
+                            <tr>
+                               <th>Zgradba pnevmatike-radialna</th>
+                               <td>R</td>
+                            </tr>
+                            <tr>
+                               <th>Premer platišča v colah</th>
+                               <td>14</td>
+                            </tr>
+                            <tr>
+                               <th>Indeks nosilnosti</th>
+                               <td>79</td>
+                            </tr>
+                            <tr>
+                               <th>Indeks hitrosti</th>
+                               <td>T</td>
+                            </tr>
+                       </table>
+                   </div>
+            </div>
+        </div>
+       
+    </div>
     
     <!-- Optional JavaScript for Bootstrap -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
