@@ -34,7 +34,7 @@ textarea {
     margin-bottom: 10px;
 }
 
-.row {
+#list .row {
     border-bottom: 1px solid #858585;
     padding: 1em;
 }
