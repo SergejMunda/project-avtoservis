@@ -1,15 +1,15 @@
 .scrollable {
     overflow-y: scroll;
-    bottom:0;
-    
-  
+    bottom: 0;
+
+
 }
 
-#list{
-    overflow-y:visible;
+#list {
+    overflow-y: visible;
 }
 
-#detail{
+#detail {
     display: none;
 }
 
@@ -32,4 +32,17 @@ textarea {
 
 .contact-form .row {
     margin-bottom: 10px;
+}
+
+.row {
+    border-bottom: 1px solid #858585;
+    padding: 1em;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .table-header {
+        display: none
+    }
 }
