@@ -1,0 +1,78 @@
+.bg-img {
+    position: fixed;
+    left: 0px;
+    right: 0;
+    top: 0;
+
+    z-index: -1;
+    /* The image used */
+    background-image: url("../images/login.jpg");
+    opacity: 0.5;
+
+    /* Add the blur effect */
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-form-inside .form-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.login-input {
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+}
+
+.login-form {
+    background: #f7f7f7d8 none repeat scroll 0 0;
+    margin: 10% auto 30px;
+    padding: 50px 70px 70px 71px;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+.register-form {
+    background: #f7f7f7 none repeat scroll 0 0;
+    margin: 10% auto 30px;
+    padding: 50px 70px 70px 71px;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+    line-height: 50px;
+}
+
+
+@media screen and (min-width: 768px) {
+
+    /* tablet sm */
+    .login-form,
+    .register-form {
+        border-radius: 20px;
+        max-width: 67%;
+        box-shadow: 5px 5px 20px #a3a3a3a9;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    /* large */
+
+    .login-form,
+    .register-form {
+        border-radius: 20px;
+        max-width: 39%;
+        box-shadow: 5px 5px 20px #a3a3a3a9;
+    }
+
+}

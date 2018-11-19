@@ -1,0 +1,21 @@
+extends layout
+block content
+  .bg-img
+  .register-form
+    form.login-form-inside(action="#")
+      .first-name-group
+        label.login-label(for="firstName") First name:
+        input.login-input(type="text" name="firstName")
+      .last-name-group
+        label.login-label(for="lastName") Last name:
+        input.login-input(type="text" name="lastName")
+      .email-group
+        label.login-label(for="email") E mail:
+        input.login-input(type="email" name="email")
+      .pass-group
+        label.login-label(for="pass") Password:
+        input.login-input(type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+      .pass-confirm-group
+        label.login-label(for="passConf") Confirm password:
+        input.login-input(type="password" name="passConf" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+      button.btn.btn-primary Register

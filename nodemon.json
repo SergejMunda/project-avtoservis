@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USERNAME": "Avtoservis1",
+        "MONGO_PW": "Avtoservis1",
+        "SLACK_TOKEN": "xoxb-460185489317-478153126976-1DimVlTTBERfrCTILLsI8thd"
+    }
+}
