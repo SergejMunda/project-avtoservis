@@ -1,0 +1,26 @@
+extends layout
+block content
+
+    .contact
+        form.contact-form(action="#")
+            .email-group.row
+                label.login-label.col-lg-1(for="email") E mail:
+                input.input.col(type="email" name="email")
+            .message-group.row
+                label.login-label.col-lg-1(for="message") Message:
+                textarea.input.col(name="message")
+            button.btn.btn-primary Send
+    #mapfit.align-self-end(style="height: 435px;")
+    // maps
+    script(src="https://cdn.mapfit.com/v2-4/assets/js/tetragon.js")
+    script(src="https://cdn.mapfit.com/v2-4/assets/js/mapfit.js")
+    script.
+      // initialize map
+      let map = mapfit.MapView('mapfit', {
+      theme: 'day'
+      });
+      // add marker
+      myMarker = mapfit.Marker([46.050260, 14.468920])
+      map.setCenter(myMarker)
+      map.addMarker(myMarker)
+      map.setZoom(13);
