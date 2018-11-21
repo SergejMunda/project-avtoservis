@@ -1,0 +1,29 @@
+extends layout
+block content
+
+    .container-fluid
+        form(action="/services/add" method="POST")
+            .form-group
+                label(for="firstName") First name
+                input#item.form-control(type="text" name="firstName" placeholder="Enter first name")
+            .form-group
+                label(for="lastName") Last name
+                input#item.form-control(type="text" name="lastName" placeholder="Enter last name")
+            .form-group
+                label(for="email") Email
+                input#item.form-control(type="text" name="email" placeholder="Enter email")
+            .form-group
+                label(for="phoneNumber") Phone number
+                input#item.form-control(type="text" name="phoneNumber" placeholder="Enter phone number")
+            .form-group
+                label(for="time") Time
+                input#item.form-control(type="datetime-local" name="time")
+            .form-group
+                label(for="type") Type
+                select#item.form-control(name="type")
+                    option(value="Mali servis") Mali servis
+                    option(value="Veliki servis") Veliki servis
+                    option(value="Menjava gum") Menjava gum
+                    option(value="Tehnični pregled") Tehnični pregled
+            a.btn.btn-secondary.mr-4(href="/services") Back
+            input.btn.btn-secondary(type="submit" value="Submit")
