@@ -5,6 +5,21 @@
 
 }
 
+html {
+    margin-top: 50px;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    z-index: 1000;
+}
+
+.maps {
+    height: 500px;
+}
+
 #list {
     overflow-y: visible;
 }

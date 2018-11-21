@@ -10,6 +10,7 @@ const usersRouter = require('./api/routes/users');
 const loginRouter = require('./api/routes/login');
 const registerRouter = require('./api/routes/register');
 const contactRouter = require('./api/routes/contact');
+const serviceRouter = require('./api/routes/service');
 
 const app = express();
 
@@ -36,12 +37,14 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/services', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/contact', contactRouter);
+app.use('/services', serviceRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

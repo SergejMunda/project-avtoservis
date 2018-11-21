@@ -1,0 +1,27 @@
+extends layout
+block content
+
+    .container-fluid
+      .main-content
+        #list.col-xs-12.col-md-12.col-sm-12
+            h3 Services
+           
+            .line.row.table-header
+                .col-md-2.col-12 First name
+                .col-md-2.col-12 Last name
+                .col-md-3.col-12 Contact
+                .col-md-2.col-12 Type
+                .col-md-3.col-12 Time
+            each service in services
+                .line.row
+                    .col-md-2.col-12= service.firstName
+                    .col-md-2.col-12= service.lastName
+                    .col-md-3.col-12= service.email
+                        br
+                        = service.phoneNumber
+                    .col-md-2.col-12= service.type
+                    .col-md-3.col-12= service.time
+
+            .row
+              .edit-buttons.align-self-end.col-md-4.col-12
+                a.btn.btn-secondary.mr-4(href="/services/add") Add
