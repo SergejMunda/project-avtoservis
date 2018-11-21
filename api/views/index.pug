@@ -1,5 +1,48 @@
 extends layout
-
+block style
+    link(href="css/creative.css" rel="stylesheet")
 block content
-  h1= title
-  p Welcome to #{title}
+
+  
+    header.masthead.text-center.d-flex
+      .container.naslov
+        .col.text-center
+          h1 Najboljši servis v mestu !
+        
+   
+    section#services
+      .container
+        .row
+          .col-lg-12.text-center
+            h2.section-heading Vam na uslugo
+            hr.my-4
+      .container
+        .row
+          .col-lg-3.col-md-6.text-center
+            .service-box.mt-5.mx-auto
+              i.fas.fa-4x.fa-gem.text-primary.mb-3.sr-icon-1
+              h3.mb-3 Service
+              p.text-muted.mb-0 Nudimo vam najboljši servis za vaš avtomobil
+          .col-lg-3.col-md-6.text-center
+            .service-box.mt-5.mx-auto
+              i.fas.fa-4x.fa-paper-plane.text-primary.mb-3.sr-icon-2
+              h3.mb-3 Pnevmatike
+              p.text-muted.mb-0 Nudimo vam menjavo gum ali nakup novih
+          .col-lg-3.col-md-6.text-center
+            .service-box.mt-5.mx-auto
+              i.fas.fa-4x.fa-code.text-primary.mb-3.sr-icon-3
+              h3.mb-3 Tehnični pregledi
+              p.text-muted.mb-0 Lahko opravite tudi tehnični pregled pri nas
+          .col-lg-3.col-md-6.text-center
+            .service-box.mt-5.mx-auto
+              i.fas.fa-4x.fa-heart.text-primary.mb-3.sr-icon-4
+              h3.mb-3 Servis z ljubeznijo
+              p.text-muted.mb-0 Najboljši kolektiv, hitre storitve
+   
+    section.bg-dark.text-white
+      .container.text-center
+        h2.mb-4 Stopite v kontakt z nami
+        a.btn.btn-light.btn-xl.sr-button(href="/contact") Nadaljuj
+    
+  
+    script(src="javascript/creative.min.js")

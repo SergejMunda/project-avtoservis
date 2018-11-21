@@ -7,30 +7,25 @@ html(lang="en")
     link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
     link(rel="stylesheet" type="text/css" href="css/style.css")
     title Login
+    block style
   body
 
-    nav.navbar.navbar-inverse
-      .container-fluid
-        .navbar-header
-          button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2")
-            span.sr-only Toggle navigation
-            span.icon-bar
-            span.icon-bar
-            span.icon-bar
-          a.navbar-brand(href="/") Delavnica
-        #bs-example-navbar-collapse-2.collapse.navbar-collapse
-          ul.nav.navbar-nav
-            li
-              a(href="/inventory") Inventory
-                span.sr-only (current)
-            li
-              a(href="/login") Login
-            li
-              a(href="/contact") Contact
-          form.navbar-form.navbar-left(role="search")
-            .form-group
-              input.form-control(type="text" placeholder="Search")
-            button.btn.btn-default(type="submit") Submit
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+      a.navbar-brand(href="/") Delavnica
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      #navbarColor02.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href="/invetory") Invetory
+          li.nav-item
+            a.nav-link(href="/login") Login
+          li.nav-item
+            a.nav-link(href="/contact") Contact
+          
+        form.form-inline.my-2.my-lg-0
+          input.form-control.mr-sm-2(type="text" placeholder="Search")
+          button.btn.btn-secondary.my-2.my-sm-0(type="submit") Search
             
     block content
 
