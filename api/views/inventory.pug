@@ -1,0 +1,21 @@
+extends layout
+block content
+
+    .container-fluid
+      .main-content
+        #list.col-xs-12.col-md-12.col-sm-12
+            h3 Inventory
+           
+            .line.row.table-header
+                .col-md-2.col-12 Item
+                .col-md-2.col-12 Description
+                .col-md-3.col-12 Quantity
+            each inventory in inventory
+                .line.row
+                    .col-md-2.col-12= inventory.itemName
+                    .col-md-2.col-12= inventory.description
+                    .col-md-3.col-12= inventory.quantity
+                    
+            .row
+              .edit-buttons.align-self-end.col-md-4.col-12
+                a.btn.btn-secondary.mr-4(href="/inventory/add") Add
