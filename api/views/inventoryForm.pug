@@ -2,7 +2,7 @@ extends layout
 block content
 
     .container-fluid
-        form(action="/services/add" method="POST")
+        form(action="/inventory/add" method="POST")
             .form-group
                 label(for="itemName") Item
                 input#item.form-control(type="text" name="itemName" placeholder="Enter item name")

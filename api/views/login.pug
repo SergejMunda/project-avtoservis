@@ -1,15 +1,12 @@
 extends layout
 
+include _include/commonFunctions.pug
+
 block content
     // content change for page
     .bg-img
     .login-form
-      form.login-form-inside(action="#")
-        .email-group
-          label.login-label(for="email") E mail:
-          input.login-input(type="email" name="email")
-        .pass-group
-          label.login-label(for="pass") Password:
-          input.login-input(type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
+      form.login-form-inside(action="#" onsubmit="return login(event)")
+        +emailPass()
         button.btn.btn-primary Login
         a.btn.btn-primary(href="/register") Register
