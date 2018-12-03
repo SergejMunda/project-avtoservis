@@ -2,15 +2,15 @@ extends layout
 block content
 
     .container-fluid
-        form(action="/inventory/add" method="POST")
+        form(action="/inventory/add" method="POST" onsubmit="return inventoryForm(event)")
             .form-group
                 label(for="itemName") Item
-                input#item.form-control(type="text" name="itemName" placeholder="Enter item name")
+                input#itemname.form-control(type="text" name="itemName" placeholder="Enter item name" required)
             .form-group
                 label(for="description") Description
-                input#item.form-control(type="text" name="description" placeholder="Enter description")
+                input#description.form-control(type="text" name="description" placeholder="Enter description" required)
             .form-group
                 label(for="quantity") Quantity
-                input#item.form-control(type="text" name="quantity" placeholder="Enter phone number")
+                input#quantity.form-control(type="text" name="quantity" placeholder="Enter quantity" required)
             a.btn.btn-secondary.mr-4(href="/inventory") Back
             input.btn.btn-secondary(type="submit" value="Submit")

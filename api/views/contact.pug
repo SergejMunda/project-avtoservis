@@ -2,13 +2,13 @@ extends layout
 block content
 
     .contact
-        form.contact-form(action="#")
+        form.contact-form(action="#" onsubmit="return contact(event)")
             .email-group.row
                 label.login-label.col-lg-1(for="email") E mail:
-                input.input.col(type="email" name="email")
+                input#email.input.col(type="email" name="email" required)
             .message-group.row
                 label.login-label.col-lg-1(for="message") Message:
-                textarea.input.col(name="message")
+                textarea#message.input.col(type ="text" name="message" required)
             button.btn.btn-primary Send
         #mapfit(style="width: 100%; height: 435px;")
     // maps

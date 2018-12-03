@@ -2,22 +2,22 @@ extends layout
 block content
 
     .container-fluid
-        form(action="/services/add" method="POST")
+        form(action="/services/add" method="POST" onsubmit="return serviceForm(event)")
             .form-group
                 label(for="firstName") First name
-                input#item.form-control(type="text" name="firstName" placeholder="Enter first name")
+                input#firstname.form-control(type="text" name="firstName" placeholder="Enter first name" required)
             .form-group
                 label(for="lastName") Last name
-                input#item.form-control(type="text" name="lastName" placeholder="Enter last name")
+                input#lastname.form-control(type="text" name="lastName" placeholder="Enter last name" required)
             .form-group
                 label(for="email") Email
-                input#item.form-control(type="text" name="email" placeholder="Enter email")
+                input#email.form-control(type="text" name="email" placeholder="Enter email" required)
             .form-group
                 label(for="phoneNumber") Phone number
-                input#item.form-control(type="text" name="phoneNumber" placeholder="Enter phone number")
+                input#phonenumber.form-control(type="text" name="phoneNumber" placeholder="+386..." required)
             .form-group
                 label(for="time") Time
-                input#item.form-control(type="datetime-local" name="time")
+                input#time.form-control(type="datetime-local" name="time" placeholder="yyyy-mm-dd hh:hh" required)
             .form-group
                 label(for="type") Type
                 select#item.form-control(name="type")

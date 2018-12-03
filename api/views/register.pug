@@ -1,11 +1,11 @@
 extends layout
 include _include/commonFunctions.pug
-include _include/commonFunctions.pug
+
 
 block content
   .bg-img
   .register-form
-    form.login-form-inside(action="#")
+    form.login-form-inside(action="#" onsubmit="return register(event)")
       .first-name-group
         label#firstname.login-label(for="firstName") First name:
         input.login-input(type="text" name="firstName" required)
@@ -14,6 +14,7 @@ block content
         input.login-input(type="text" name="lastName" required)
       +emailPass()
       .pass-confirm-group
-        label#pass2.login-label(for="passConf") Confirm password:
-        input.login-input(type="password" name="passConf" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" )
+        label.login-label(for="passConf") Confirm password:
+        input#pass2.login-input(type="password" name="passConf" required )
       button.btn.btn-primary Register
+  
