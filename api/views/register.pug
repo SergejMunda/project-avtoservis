@@ -7,11 +7,11 @@ block content
   .register-form
     form.login-form-inside(action="#" onsubmit="return register(event)")
       .first-name-group
-        label#firstname.login-label(for="firstName") First name:
-        input.login-input(type="text" name="firstName" required)
+        label.login-label(for="firstName") First name:
+        input#firstname.login-input(type="text" name="firstName" required)
       .last-name-group
-        label#lastname.login-label(for="lastName") Last name:
-        input.login-input(type="text" name="lastName" required)
+        label.login-label(for="lastName") Last name:
+        input#lastname.login-input(type="text" name="lastName" required)
       +emailPass()
       .pass-confirm-group
         label.login-label(for="passConf") Confirm password:
