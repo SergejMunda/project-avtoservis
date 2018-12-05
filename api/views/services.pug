@@ -20,8 +20,8 @@ block content
                         br
                         = service.phoneNumber
                     .col-md-2.col-12= service.type
-                    .col-md-3.col-12= service.time
-
+                    .col-md-2.col-12= service.time
+                    .btn.btn-secondary.col-md-1.col-12(onclick="deleteService('" + service._id + "')") Delete
             .row
               .edit-buttons.align-self-end.col-md-4.col-12
                 a.btn.btn-secondary.mr-4(href="/services/add") Add
