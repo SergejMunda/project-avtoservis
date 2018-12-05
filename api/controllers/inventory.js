@@ -1,12 +1,12 @@
 const Inventory = require('../models/inventory');
 const mongoose = require('mongoose');
 
-module.exports.get = function (req, res) {
+module.exports.get = function(req, res) {
     Inventory.find()
         .exec()
         .then(docs => {
             res.render('inventory', {
-                inventory: docs
+                items: docs
             });
         })
         .catch(err => {
@@ -15,17 +15,16 @@ module.exports.get = function (req, res) {
         });
 };
 
-module.exports.getForm = function (req, res) {
+module.exports.getForm = function(req, res) {
     res.render('inventoryForm');
 };
 
-module.exports.addNew = function (req, res) {
+module.exports.addNew = function(req, res) {
     const inventory = new Inventory(req.body);
-    inventory.save(function (err) {
+    inventory.save(function(err) {
         if (err) {
             res.render('inventoryForm');
         }
         res.render('inventoryForm');
     });
-
 };
