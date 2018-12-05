@@ -19,7 +19,7 @@ Aplikacija mora podpirati:
 | Edit supplies   | Allows the employees to edit the quantity, type and description of a element from the list of supplies   | [ Edit](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html)   |
 | Search through supplies   | Allows searching through available supplies   | [Search](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html)   |
 | Master-detail   | Details about available supplies | [Master-detail](https://bitbucket.org/bc7608/sp-v1/src/master/docs/inventory.html)    |
-| External source   | Omogočanje pregleda vseh zalog in podrobnosti za vsako izmed njih(master-detail)      | [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html)     |
+| External source   | Connects to the mapfit external source and shows the location of the workshop      | [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html)     |
 
 | Seznam manjkajočih zalog | Omogočanje pregleda materialov, katere je potrebno kupiti     |    |
 | Izpis naročenih strank   | Omogočanje pregleda vseh naročenih strank in podrobnosti o naročilih   |   |
