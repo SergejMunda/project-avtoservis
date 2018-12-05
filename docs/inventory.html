@@ -56,7 +56,7 @@
                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
                     <script>
                         $(document).ready(function () {
-                            $(".line").click(function () {
+                            $("#gume-details").click(function () {
                                 $("#detail").toggle();
                                 $("#detail").toggleClass(
                                     "col-xs-6 col-md-7 col-sm-7 scrollable");
@@ -78,7 +78,7 @@
                         <div class="edit-buttons col-md-4 col-12">
                             <a href="./edit.html" class="btn btn-secondary">Edit</a>
                             <button class='btn'>Delete</button>
-                            <button class='btn'>Details</button>
+                            <button class='btn' id='gume-details'>Details</button>
                         </div>
                     </div>
                     <div class="line row">
