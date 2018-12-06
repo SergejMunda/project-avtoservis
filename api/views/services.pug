@@ -19,7 +19,7 @@ block content
                     .col-md-3.col-12= service.email
                         br
                         = service.phoneNumber
-                    .col-md-2.col-12= service.type
+                    .col-md-2.col-12= service.type.type
                     .col-md-2.col-12= service.time
                     .btn.btn-secondary.col-md-1.col-12(onclick="deleteService('" + service._id + "')") Delete
             .row

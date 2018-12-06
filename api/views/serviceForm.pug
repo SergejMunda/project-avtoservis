@@ -21,9 +21,7 @@ block content
             .form-group
                 label(for="type") Type
                 select#item.form-control(name="type")
-                    option(value="Mali servis") Mali servis
-                    option(value="Veliki servis") Veliki servis
-                    option(value="Menjava gum") Menjava gum
-                    option(value="Tehnični pregled") Tehnični pregled
+                    each serviceType in serviceTypes
+                        option(value=serviceType._id)= serviceType.type
             a.btn.btn-secondary.mr-4(href="/services") Back
             input.btn.btn-secondary(type="submit" value="Submit")
