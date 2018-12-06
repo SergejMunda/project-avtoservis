@@ -16,30 +16,14 @@ module.exports.get = function(req, res) {
         });
 };
 
-module.exports.delete = function(req, res) {
-    const id = req.params.id;
-    Service.deleteOne({ _id: id }, function(err) {
-        if (err) return handleError(err);
-        // deleted at most one tank document
-        Service.find()
-            .exec()
-            .then(docs => {
-                res.render('services', {
-                    services: docs
-                });
-            })
-            .catch(err => {
-                res.status(500).json(err.message);
-                console.log(err.message);
-            });
-    });
-};
+
 
 module.exports.delete = function(req, res) {
     const id = req.params.id;
     Service.deleteOne({ _id: id }, function(err) {
         if (err) return handleError(err);
         // deleted at most one tank document
+        res.sendStatus(200);
     });
 };
 
