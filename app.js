@@ -12,6 +12,7 @@ const registerRouter = require('./api/routes/register');
 const contactRouter = require('./api/routes/contact');
 const serviceRouter = require('./api/routes/service');
 const inventoryRouter = require('./api/routes/inventory');
+const dbRouter = require('./api/routes/db');
 
 const app = express();
 
@@ -48,6 +49,7 @@ app.use('/register', registerRouter);
 app.use('/contact', contactRouter);
 app.use('/services', serviceRouter);
 app.use('/inventory', inventoryRouter);
+app.use('/db', dbRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

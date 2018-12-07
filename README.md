@@ -20,8 +20,5 @@ Aplikacija mora podpirati:
 | Search through supplies   | Allows searching through available supplies   | [Search](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html)   |
 | Master-detail   | Details about available supplies | [Master-detail](https://bitbucket.org/bc7608/sp-v1/src/master/docs/inventory.html)    |
 | External source   | Connects to the mapfit external source and shows the location of the workshop      | [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html)     |
+| Contact form   | Allows the costumers to contact the company   | [Contact form](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html)  |
 
-| Seznam manjkajočih zalog | Omogočanje pregleda materialov, katere je potrebno kupiti     |    |
-| Izpis naročenih strank   | Omogočanje pregleda vseh naročenih strank in podrobnosti o naročilih   |   |
-| Kontaktni obrazec   | Omogoča kontakt med strankami in uslužbenci   | [Kontaktni obrazec](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html)  |
-| Avtomatsko naročanje   | Omogočanje, da se stranka preko kontaktnega obrazca naroči in izbere, kakšen servis želi   |   |
