@@ -6,8 +6,8 @@ const serviceSchema = mongoose.Schema({
     email: String,
     phoneNumber: String,
     time: String,
-    type: String
+    // type:c String,
+    type: { type: mongoose.Schema.Types.ObjectId, ref: 'ServiceType' }
 });
-
 
 module.exports = mongoose.model('service', serviceSchema);

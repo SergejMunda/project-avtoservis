@@ -14,7 +14,9 @@ block content
                 .line.row
                     .col-md-2.col-12= item.itemName
                     .col-md-2.col-12= item.description
-                    .col-md-3.col-12= item.quantity
+                    .col-md-2.col-12= item.quantity
+                    .btn.btn-secondary.col-md-1.col-12(onclick="deleteInventory('" + item._id + "')") Delete
+                    
                     
             .row
               .edit-buttons.align-self-end.col-md-4.col-12
