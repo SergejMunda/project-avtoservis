@@ -7,6 +7,8 @@ At the moment, he has to do it all by himself,
 and he often runs out of supplies or books two costumers at the same time, 
 therefore he would like to have this process automated.
 
+[Our app hosted on heroku](http://avtoservis.herokuapp.com/)
+
 Aplikacija mora podpirati:
 
 | Functionality        | Description          | Link  |
