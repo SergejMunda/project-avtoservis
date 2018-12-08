@@ -12,11 +12,8 @@ const registerRouter = require('./api/routes/register');
 const contactRouter = require('./api/routes/contact');
 const serviceRouter = require('./api/routes/service');
 const inventoryRouter = require('./api/routes/inventory');
-<<<<<<< HEAD
 const dbRouter = require('./api/routes/db');
-=======
 const serviceTypeRouter = require('./api/routes/serviceType');
->>>>>>> e350f9c9d52a8e7b3d6f8a3b73ac2d25d4014cb7
 
 const app = express();
 
@@ -43,11 +40,8 @@ app.use('/register', registerRouter);
 app.use('/contact', contactRouter);
 app.use('/services', serviceRouter);
 app.use('/inventory', inventoryRouter);
-<<<<<<< HEAD
 app.use('/db', dbRouter);
-=======
 app.use('/serviceTypes', serviceTypeRouter);
->>>>>>> e350f9c9d52a8e7b3d6f8a3b73ac2d25d4014cb7
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
