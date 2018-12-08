@@ -1,3 +1,5 @@
+/*global $*/
+var flag = 0;
 $(document).ready(function() {
     deleteService = function(itemId) {
         $.ajax({
@@ -19,4 +21,11 @@ $(document).ready(function() {
          });
         console.log(itemId);
     };
+    
+    $(".btn:contains('Details')").click(function(){
+        console.log("clicked");
+        
+        $(".last").next().toggle();
+       
+    })
 });
