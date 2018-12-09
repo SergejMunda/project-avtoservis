@@ -22,10 +22,17 @@ $(document).ready(function() {
         console.log(itemId);
     };
     
-    $(".btn:contains('Details')").click(function(){
-        console.log("clicked");
-        
-        $(".last").next().toggle();
+    serviceDetails = function(itemId){
+       var wasVisible =  $(".id:contains('"+itemId+"')").next().is(":visible");
+       $(".detail:visible").stop().slideUp("slow");
+        if(!wasVisible){
+             $(".id:contains('"+itemId+"')").next().slideDown("slow");
+        }
        
-    })
+        
+       
+    
+    }
+    
+   
 });

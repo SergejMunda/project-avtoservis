@@ -16,9 +16,9 @@ block content
                     .edit-buttons.align-self-end.col-md-1.col-12
                       .btn.btn-secondary.mr-4(onclick="deleteService('" + service._id + "')") Delete
                     .edit-buttons.align-self-end.col-md-1.col-12
-                      .btn.btn-secondary.mr-4 Details
+                      .btn.btn-secondary.mr-4(onclick="serviceDetails('" + service._id + "')") Details
                     .last.col-md-5.col-12
-                    
+                    .id.div=service._id
                     .detail.col-xs-12.col-md-12.col-sm-12
                       .line.row.table-header
                         .col-md-2.col-12 First Name

@@ -21,6 +21,10 @@
     
 }
 
+.id{
+    display: none;
+}
+
 .contact {
     padding: 2em;
 }
