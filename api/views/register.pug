@@ -5,7 +5,7 @@ include _include/commonFunctions.pug
 block content
   .bg-img
   .register-form
-    form.login-form-inside(action="#" onsubmit="return register(event)")
+    form.login-form-inside(action="/register" method="POST" onsubmit="return register(event)")
       .first-name-group
         label.login-label(for="firstName") First name:
         input#firstname.login-input(type="text" name="firstName" required)
