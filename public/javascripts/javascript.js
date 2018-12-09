@@ -1,3 +1,5 @@
+/*global $*/
+var flag = 0;
 $(document).ready(function() {
     deleteService = function(itemId) {
         $.ajax({
@@ -19,4 +21,18 @@ $(document).ready(function() {
          });
         console.log(itemId);
     };
+    
+    serviceDetails = function(itemId){
+       var wasVisible =  $(".id:contains('"+itemId+"')").next().is(":visible");
+       $(".detail:visible").stop().slideUp("slow");
+        if(!wasVisible){
+             $(".id:contains('"+itemId+"')").next().slideDown("slow");
+        }
+       
+        
+       
+    
+    }
+    
+   
 });

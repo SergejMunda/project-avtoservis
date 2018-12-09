@@ -5,16 +5,7 @@
 
 }
 
-html {
-    margin-top: 50px;
-}
 
-.fixed {
-    position: fixed;
-    width: 100%;
-    top: 0px;
-    z-index: 1000;
-}
 
 .maps {
     height: 500px;
@@ -24,7 +15,13 @@ html {
     overflow-y: visible;
 }
 
-#detail {
+.detail {
+    overflow-y: visible;
+    display: none;
+    
+}
+
+.id{
     display: none;
 }
 
@@ -50,9 +47,12 @@ textarea {
 }
 
 #list .row {
+    
     border-bottom: 1px solid #858585;
     padding: 1em;
 }
+
+
 
 
 

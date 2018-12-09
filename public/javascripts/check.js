@@ -5,8 +5,8 @@ const regName = /^[a-zčćžšđ]+$/i;
 const regMessage = /^.{1,500}$/;
 const regDescription = /^.{1,300}$/;
 const rexPhoneNumber = /^\+[1-9]{1}[0-9]{3,14}$/;
-const regTime = /\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}/;
-const reqQuantity = /\d/;
+const regTime = /\d{4}-\d{1,2}-\d{1,2} \d{1,2}:\d{2}/;
+const reqQuantity = /^\d+$/;
 
 var login = function(event) {
     var email = document.getElementById('email').value;
