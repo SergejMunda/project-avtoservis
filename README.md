@@ -26,6 +26,9 @@ Our application supports:
 | External source            |             Connects to the mapfit external source and shows the location of the workshop              |   [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/contact.pug?at=master) |
 | Contact form               |                              Allows the costumers to contact the company                               |       [Contact form](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/contact.pug?at=master) |
 | Services                   |				Allows the employees to see which services have to be done and who ordered them           |   [Services](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/services.pug?at=master)   |
+| Frontpage                  |                       Frontpage to make first impact on potential costumers                            |   [Frontpage](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/index.pug?at=master)|
+| Pug layout                 |                     Layout used for all pug views                                                      |   [Layout](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/layout.pug?at=master) |
+| Mixin                      |                            Mixin for pug views                                                         |   [Mixin](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/_include/commonFunctions.pug?at=master) |
 
 # Validation patterns
 
