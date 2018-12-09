@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const inventorySchema = mongoose.Schema({
-    itemName: String,
-    description: String,
-    quantity: String
+    itemName: {type: String, required: true},
+    description: {type: String, required: true},
+    quantity: {type: Number, required: true, min: 0, max: 1000000}
 });
 
 

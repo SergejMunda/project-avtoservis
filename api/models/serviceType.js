@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 const serviceType = mongoose.Schema({
-    type: String
+    type: {type: String, required: true}
 });
 
 module.exports = mongoose.model('ServiceType', serviceType);
