@@ -1,6 +1,6 @@
 extends layout
 block content
-
+    
     .container-fluid
       .main-content
         #list.col-xs-12.col-md-12.col-sm-12
@@ -12,12 +12,14 @@ block content
                 .col-md-3.col-12 Quantity
             each item in items
                 .line.row
-                    .col-md-2.col-12= item.itemName
+                    .ime.col-md-2.col-12= item.itemName
                     .col-md-2.col-12= item.description
                     .col-md-2.col-12= item.quantity
                     .btn.btn-secondary.col-md-1.col-12(onclick="deleteInventory('" + item._id + "')") Delete
                     
                     
             .row
-              .edit-buttons.align-self-end.col-md-4.col-12
+              .edit-buttons.align-self-end.col-md-1.col-12
                 a.btn.btn-secondary.mr-4(href="/inventory/add") Add
+              form#forma.form-inline.my-2.my-lg-0
+                input#search.form-control.mr-sm-2(type="text" placeholder="Search")

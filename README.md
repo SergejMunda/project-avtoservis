@@ -9,20 +9,26 @@ therefore he would like to have this process automated.
 
 [Our app hosted on heroku](http://avtoservis.herokuapp.com/)
 
+Our application can be used on phones, tablets or computers.
+
 Our application supports:
 
 | Functionality              |                                              Description                                               |                                                                                  Link |
 | -------------------------- | :----------------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------------: |
-| Employee login page        |                                     Allows the employees to login                                      |                [Login](https://bitbucket.org/bc7608/sp-v1/src/master/docs/login.html) |
-| Employee registration page |                                    Allows new employees to register                                    |      [Registration](https://bitbucket.org/bc7608/sp-v1/src/master/docs/register.html) |
-| List of supplies           |                                    A list of all available supplies                                    | [List of supplies](https://bitbucket.org/bc7608/sp-v1/src/master/docs/inventory.html) |
-| Add supplies               |                   Allows the employees to add a new element to the list of supplies                    |                  [ Add](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html) |
-| Delete supplies            |     Allows the employees to delete elements from the list of supplies that are no longer available     |                [Delete](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html) |
+| Employee login page        |                                     Allows the employees to login                                      |                [Login](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/login.pug?at=master) |
+| Employee registration page |                                    Allows new employees to register                                    |      [Registration](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/register.pug?at=master) |
+| List of supplies           |                                    A list of all available supplies                                    | [List of supplies](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/inventory.pug?at=master) |
+| Add supplies               |                   Allows the employees to add a new element to the list of supplies                    |                  [ Add](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/inventory.pug?at=master) |
+| Delete supplies            |     Allows the employees to delete elements from the list of supplies that are no longer available     |                [Delete](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/inventory.pug?at=master) |
 | Edit supplies              | Allows the employees to edit the quantity, type and description of a element from the list of supplies |                 [ Edit](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html) |
-| Search through supplies    |                              Allows searching through available supplies                               |                [Search](https://bitbucket.org/bc7608/sp-v1/src/master/docs/edit.html) |
-| Master-detail              |                                    Details about available supplies                                    |    [Master-detail](https://bitbucket.org/bc7608/sp-v1/src/master/docs/inventory.html) |
-| External source            |             Connects to the mapfit external source and shows the location of the workshop              |   [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html) |
-| Contact form               |                              Allows the costumers to contact the company                               |       [Contact form](https://bitbucket.org/bc7608/sp-v1/src/master/docs/contact.html) |
+| Search through supplies    |                              Allows searching through available supplies                               |                [Search](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/inventory.pug?at=master) |
+| Master-detail              |                                    Details about available supplies                                    |    [Master-detail](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/services.pug?at=master) |
+| External source            |             Connects to the mapfit external source and shows the location of the workshop              |   [ External source](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/contact.pug?at=master) |
+| Contact form               |                              Allows the costumers to contact the company                               |       [Contact form](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/contact.pug?at=master) |
+| Services                   |				Allows the employees to see which services have to be done and who ordered them           |   [Services](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/services.pug?at=master)   |
+| Frontpage                  |                       Frontpage to make first impact on potential costumers                            |   [Frontpage](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/index.pug?at=master)|
+| Pug layout                 |                     Layout used for all pug views                                                      |   [Layout](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/layout.pug?at=master) |
+| Mixin                      |                            Mixin for pug views                                                         |   [Mixin](https://bitbucket.org/bc7608/sp-v1/src/master/api/views/_include/commonFunctions.pug?at=master) |
 
 # Validation patterns
 

@@ -48,11 +48,20 @@ $(document).ready(function() {
         if(!wasVisible){
              $(".id:contains('"+itemId+"')").next().slideDown("slow");
         }
-       
-        
-       
     
     }
     
+    $("#search").on("keyup", function(){
+        var g = $(this).val();
+        $(".ime").each(function(){
+            var s = $(this).text()
+            if (s.indexOf(g)!=-1) {
+                $(this).parent().show();
+            }
+            else {
+                $(this).parent().hide();
+            }
+        })
+    })    
    
 });
