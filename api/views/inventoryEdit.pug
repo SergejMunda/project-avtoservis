@@ -1,0 +1,16 @@
+extends layout
+block content
+
+    .container-fluid
+        form
+            .form-group
+                label(for="itemName") Item
+                input#itemname.form-control(type="text" value=item.itemName name="itemName" placeholder="Enter item name" required)
+            .form-group
+                label(for="description") Description
+                input#description.form-control(type="text" value=item.description name="description" placeholder="Enter description" required)
+            .form-group
+                label(for="quantity") Quantity
+                input#quantity.form-control(type="text" value=item.quantity name="quantity" placeholder="Enter quantity" required)
+            a.btn.btn-secondary.mr-4(href="/inventory") Back
+            input.btn.btn-secondary(type="button" onclick="inventoryEdit('" + item._id + "')" value="Submit")

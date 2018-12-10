@@ -14,9 +14,11 @@ block content
                     .col-md-2.col-12= service.type.type
                     .col-md-3.col-12= service.time
                     .edit-buttons.align-self-end.col-md-1.col-12
+                      .btn.btn-secondary.mr-4(onclick="serviceDetails('" + service._id + "')") Details
+                    .edit-buttons.align-self-end.col-md-1.col-12
                       .btn.btn-secondary.mr-4(onclick="deleteService('" + service._id + "')") Delete
                     .edit-buttons.align-self-end.col-md-1.col-12
-                      .btn.btn-secondary.mr-4(onclick="serviceDetails('" + service._id + "')") Details
+                      a.btn.btn-secondary.mr-4(href="/services/add/" + service._id) Edit
                     .last.col-md-5.col-12
                     .id.div=service._id
                     .detail.col-xs-12.col-md-12.col-sm-12

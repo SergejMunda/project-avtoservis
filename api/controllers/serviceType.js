@@ -5,7 +5,7 @@ module.exports.get = function(req, res) {
         .exec()
         .then(docs => {
             console.log(docs);
-            res.send(docs);
+            res.render('serviceType', { items: docs });
         })
         .catch(err => {
             res.status(500).json(err.message);
@@ -53,6 +53,15 @@ module.exports.add = function(req, res) {
         if (err) {
             res.status(500).send(err);
         }
-        res.send(serviceType);
+        ServiceType.find()
+            .exec()
+            .then(docs => {
+                console.log(docs);
+                res.render('serviceType', { items: docs });
+            })
+            .catch(err => {
+                res.status(500).json(err.message);
+                console.log(err.message);
+            });
     });
 };

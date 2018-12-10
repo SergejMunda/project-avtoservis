@@ -1,0 +1,27 @@
+extends layout
+block content
+
+    .container-fluid
+        form
+            .form-group
+                label(for="firstName") First name
+                input#firstname.form-control(type="text" value=service.firstName name="firstName" placeholder="Enter first name" required)
+            .form-group
+                label(for="lastName") Last name
+                input#lastname.form-control(type="text" value=service.lastName name="lastName" placeholder="Enter last name" required)
+            .form-group
+                label(for="email") Email
+                input#email.form-control(type="text" value=service.email  name="email" placeholder="Enter email" required)
+            .form-group
+                label(for="phoneNumber") Phone number
+                input#phonenumber.form-control(type="text" value="+"+service.phoneNumber name="phoneNumber" placeholder="+386..." required)
+            .form-group
+                label(for="time") Time
+                input#time.form-control(type="datetime-local" value=service.time name="time" placeholder="yyyy-mm-dd hh:hh" required)
+            .form-group
+                label(for="type") Type
+                select#item.form-control(name="type")
+                    each serviceType in serviceTypes
+                        option(value=serviceType._id)= serviceType.type
+            a.btn.btn-secondary.mr-4(href="/services") Back
+            input.btn.btn-secondary(type="button" onclick="serviceEdit('" + service._id + "')" value="Submit")

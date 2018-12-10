@@ -1,11 +1,11 @@
 /* global swal */
 const regEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const regPass = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-const regName = /^[a-zčćžšđ]+$/i;
+const regName = /^[a-z]+$/i;
 const regMessage = /^.{1,500}$/;
 const regDescription = /^.{1,300}$/;
 const rexPhoneNumber = /^\+[1-9]{1}[0-9]{3,14}$/;
-const regTime = /\d{4}-\d{1,2}-\d{1,2} \d{1,2}:\d{2}/;
+const regTime = /\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{2}/;
 const reqQuantity = /^\d+$/;
 
 var login = function(event) {

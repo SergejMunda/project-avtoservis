@@ -1,11 +1,11 @@
 .scrollable {
     overflow-y: scroll;
     bottom: 0;
-
-
 }
 
-
+.margin-top {
+    margin-top: 20px;
+}
 
 .maps {
     height: 500px;
@@ -18,12 +18,9 @@
 .detail {
     overflow-y: visible;
     display: none;
-    
 }
 
-
-
-.id{
+.id {
     display: none;
 }
 
@@ -32,13 +29,12 @@
 }
 
 .input {
-    border: 1px solid #000000
+    border: 1px solid #000000;
 }
 
 textarea {
     vertical-align: top;
 }
-
 
 .contact-form {
     margin: 10px;
@@ -49,21 +45,15 @@ textarea {
 }
 
 #list .row {
-    
     border-bottom: 1px solid #858585;
     padding: 1em;
 }
 
-
-
-
-
 @media screen and (max-width: 768px) {
     .table-header {
-        display: none
+        display: none;
     }
 }
-
 
 /* login css */
 
@@ -75,7 +65,7 @@ textarea {
 
     z-index: -1;
     /* The image used */
-    background-image: url("../images/login.jpg");
+    background-image: url('../images/login.jpg');
     opacity: 0.5;
 
     /* Add the blur effect */
@@ -120,9 +110,7 @@ textarea {
     line-height: 50px;
 }
 
-
 @media screen and (min-width: 768px) {
-
     /* tablet sm */
     .login-form,
     .register-form {
@@ -132,9 +120,7 @@ textarea {
     }
 }
 
-
 @media screen and (min-width: 992px) {
-
     /* large */
 
     .login-form,
@@ -143,5 +129,4 @@ textarea {
         max-width: 39%;
         box-shadow: 5px 5px 20px #a3a3a3a9;
     }
-
 }

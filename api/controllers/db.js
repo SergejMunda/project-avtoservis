@@ -9,11 +9,14 @@ const inventoryPreset = require('../presets/inventory.json');
 
 const mongoose = require('mongoose');
 
-findTypes = function(name){
-    ServiceType.findOne({type : name})
+findTypes = function(name) {
+    ServiceType.findOne({ type: name })
         .exec()
-        .then(function(id){ console.log(id); return id });
-}
+        .then(function(id) {
+            console.log(id);
+            return id;
+        });
+};
 
 module.exports.delete = function(req, res) {
     Service.deleteMany({}, function(err) {
@@ -32,6 +35,7 @@ module.exports.delete = function(req, res) {
         if (err) return handleError(err);
         // deleted at most one tank document
     });
+    res.sendStatus(200);
 };
 
 module.exports.get = function(req, res) {
@@ -39,36 +43,20 @@ module.exports.get = function(req, res) {
 };
 
 module.exports.loadPresets = function(req, res) {
-   // console.log(servicesPreset);
-    ServiceType.insertMany([
-        {type : "Menjava gum"},
-        {type : "Menjava olja"}
-    ]);
-    ServiceType.findOne({type : 'Menjava gum'})
-        .exec()
-        .then(function(id){
-            for (service in servicesPreset){
-            servicesPreset[service].type = id._id;
-            }
-            console.log(servicesPreset);
-            Service.insertMany(servicesPreset);
-        });
-    /*var serviceArray = [];
-    for (service in servicesPreset){
-        service.type = findTypes("Menjava gum");
-        serviceArray.push(service);
-        
-    }*/
-    //console.log(servicesPreset);
-    //Service.insertMany(servicesPreset);
-    
-    /*Service.insertOne({
-        firstName : 'Janez',
-        lastName : 'Novak',
-        email : 'jNovak@gmail.com',
-        phoneNumber : '031457375',
-        type : findTypes('Menjava gum')
-    });*/
+    // console.log(servicesPreset);
+    ServiceType.insertMany([{ type: 'Menjava gum' }, { type: 'Menjava olja' }]).then(data => {
+        ServiceType.findOne({ type: 'Menjava gum' })
+            .exec()
+            .then(function(id) {
+                for (service in servicesPreset) {
+                    servicesPreset[service].type = id._id;
+                }
+                console.log('test', servicesPreset);
+                Service.insertMany(servicesPreset);
+            });
+    });
     User.insertMany(usersPreset);
     Inventory.insertMany(inventoryPreset);
+
+    res.sendStatus(200);
 };

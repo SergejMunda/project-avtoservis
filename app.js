@@ -31,7 +31,9 @@ app.use(
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/services', express.static(path.join(__dirname, 'public')));
+app.use('/services/add', express.static(path.join(__dirname, 'public')));
 app.use('/inventory', express.static(path.join(__dirname, 'public')));
+app.use('/inventory/add', express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

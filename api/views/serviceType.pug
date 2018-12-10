@@ -1,0 +1,17 @@
+extends layout
+block content
+
+    .container-fluid
+        form(action="/serviceTypes" method="POST").margin-top
+            .form-group
+                label(for="type") Service type
+                input.form-control(type="text" name="type" required)
+            input.btn.btn-secondary(type="submit" value="Submit")
+
+    .container-fluid.margin-top
+        .main-content
+            #list.col-xs-12.col-md-12.col-sm-12
+                h3 ServiceTypes
+                each item in items
+                    .line.row
+                        .col-md-6.col-12= item.type
