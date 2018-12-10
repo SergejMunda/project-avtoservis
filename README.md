@@ -106,7 +106,7 @@ User must pick one of the types possible for service
 
 -   install mongodb
 -   run mongodb `mongod` and create database avtoservice `use avtoservice`
--   open terminal move to dir with app
+-   open terminal move to dir with app.js file
 -   install dependencies with `npm install`
--   use command `npm start` to start the app
+-   use command `npm start` or `nodemon` to start the app
 -   app is running on url `localhost:3000`
