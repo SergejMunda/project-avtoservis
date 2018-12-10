@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
-var dbURI = ' mongodb://localhost/avtoservice';
+//var dbURI = ' mongodb://localhost/avtoservice';
+var dbURI = 'mongodb://Avtoservis1:Avtoservis1@ds237808.mlab.com:37808/avtoservis';
 if (process.env.NODE_ENV === 'production') {
     dbURI = 'mongodb://Avtoservis1:Avtoservis1@ds237808.mlab.com:37808/avtoservis';
 }

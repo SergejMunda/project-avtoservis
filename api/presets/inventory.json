@@ -1,27 +1,27 @@
 [
     {
-        "itemName": "gume",
+        "itemName": "Letne gume",
         "description": "to so gume",
         "quantity": 5
     },
     {
-        "itemName": "vijaki",
+        "itemName": "Vijaki",
         "description": "to so vijaki",
         "quantity": 12
     },
     {
-        "itemName": "gume",
+        "itemName": "Zimske gume",
         "description": "to so gume",
+        "quantity": 4
+    },
+    {
+        "itemName": "Zavore",
+        "description": "to so zavore",
         "quantity": 5
     },
     {
-        "itemName": "gume",
-        "description": "to so gume",
-        "quantity": 5
-    },
-    {
-        "itemName": "gume",
-        "description": "to so gume",
+        "itemName": "Diski",
+        "description": "to so diski",
         "quantity": 5
     }
 ]

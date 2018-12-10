@@ -1,0 +1,32 @@
+[
+    {
+        "firstName": "Janez",
+        "lastName": "Novak",
+        "email": "jNovak@gmail.com",
+        "phoneNumber": "031457375"
+    },
+    {
+        "firstName": "Danilo",
+        "lastName": "Turk",
+        "email": "dTurk@gmail.com",
+        "phoneNumber": "051457234"
+    },
+    {
+        "firstName": "Petar",
+        "lastName": "Grašo",
+        "email": "pGraso@gmail.com",
+        "phoneNumber": "355754235"
+    },
+    {
+        "firstName": "Pivo",
+        "lastName": "Zlatorog",
+        "email": "pZlatorog@gmail.com",
+        "phoneNumber": "03137494"
+    },
+    {
+        "firstName": "Donald",
+        "lastName": "Duck",
+        "email": "dDuck@gmail.com",
+        "phoneNumber": "948638433"
+    }
+]

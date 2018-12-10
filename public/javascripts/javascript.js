@@ -21,6 +21,26 @@ $(document).ready(function() {
          });
         console.log(itemId);
     };
+    deleteAll = function(){
+        $.ajax({
+             url: '/db/',
+             method: 'DELETE'
+         }).done(function(data) {
+             location.reload();
+             console.log(data);
+         });
+        console.log("Everything deleted");
+    };
+    loadPresets = function(){
+        $.ajax({
+             url: '/db/',
+             method: 'POST'
+         }).done(function(data) {
+             location.reload();
+             console.log(data);
+         });
+        console.log("Presets loaded");
+    };
     
     serviceDetails = function(itemId){
        var wasVisible =  $(".id:contains('"+itemId+"')").next().is(":visible");

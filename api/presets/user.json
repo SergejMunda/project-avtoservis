@@ -1,0 +1,20 @@
+[
+    {
+        "firstName": "Janez",
+        "lastName": "Novak",
+        "email": "jNovak@gmail.com",
+        "password": "janezek"
+    },
+    {
+        "firstName": "Stefan",
+        "lastName": "Gemej",
+        "email": "sGemej@gmail.com",
+        "password": "gemej123"
+    },
+    {
+        "firstName": "Ivan",
+        "lastName": "Majerič",
+        "email": "iMajeric@gmail.com",
+        "password": "ivek"
+    }
+]

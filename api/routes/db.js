@@ -5,8 +5,8 @@ const ctrlDb = require('../controllers/db');
 
 router.get('/', ctrlDb.get);
 
-//router.delete('/', ctrlDb.delete);
+router.delete('/', ctrlDb.delete);
 
-//router.post('/', ctrlDb.addNew);
+router.post('/', ctrlDb.loadPresets);
 
 module.exports = router;
