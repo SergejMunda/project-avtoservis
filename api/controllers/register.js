@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const bcrypt = require('bcrypt');
 
 module.exports.get = function(req, res) {
     res.render('register', {});
@@ -12,7 +11,7 @@ module.exports.register = function(req, res) {
         firstName: body.firstName,
         lastName: body.lastName,
         email: body.email,
-        password: bcrypt.hashSync('myPassword', 10)
+        password: pass
     });
     user.save(function(err) {
         if (err) {
