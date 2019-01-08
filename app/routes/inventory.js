@@ -9,8 +9,10 @@ router.delete('/:id', ctrlInventory.delete);
 
 router.put('/:id', ctrlInventory.update);
 
-router.get('/:id', ctrlInventory.getOne);
+router.get('/add', ctrlInventory.getForm);
 
-router.post('/', ctrlInventory.addNew);
+router.get('/add/:id', ctrlInventory.getEditForm);
+
+router.post('/add', ctrlInventory.addNew);
 
 module.exports = router;

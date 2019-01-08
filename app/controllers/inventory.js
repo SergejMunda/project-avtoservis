@@ -5,7 +5,9 @@ module.exports.get = function(req, res) {
     Inventory.find()
         .exec()
         .then(docs => {
-            res.send(docs);
+            res.render('inventory', {
+                items: docs
+            });
         })
         .catch(err => {
             res.status(500).json(err.message);
@@ -13,16 +15,17 @@ module.exports.get = function(req, res) {
         });
 };
 
-module.exports.getOne = function(req, res) {
-    const id = req.params.id;
-    Inventory.findOne({ _id: id })
+module.exports.getForm = function(req, res) {
+    res.render('inventoryForm');
+};
+
+module.exports.getEditForm = function(req, res) {
+    Inventory.findById(req.params.id)
         .exec()
-        .then(doc => {
-            if (doc !== null) {
-                res.send(doc);
-            } else {
-                res.sendStatus(404);
-            }
+        .then(docs => {
+            res.render('inventoryEdit', {
+                item: docs
+            });
         })
         .catch(err => {
             res.status(500).json(err.message);
@@ -35,7 +38,7 @@ module.exports.delete = function(req, res) {
     Inventory.deleteOne({ _id: id }, function(err) {
         if (err) return handleError(err);
         // deleted at most one tank document
-        res.status(204).json();
+        res.sendStatus(200);
     });
 };
 
@@ -55,9 +58,8 @@ module.exports.addNew = function(req, res) {
     const inventory = new Inventory(req.body);
     inventory.save(function(err) {
         if (err) {
-            res.sendStatus(400);
-        } else {
-            res.send(inventory);
+            res.render('inventoryForm');
         }
+        res.render('inventoryForm');
     });
 };

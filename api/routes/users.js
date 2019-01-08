@@ -2,8 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', ctrlService.get);
+
+// router.get('/:id', ctrlService.getOne);
+
+// router.delete('/:id', ctrlService.delete);
+
+// router.put('/:id', ctrlService.update);
+
+// router.post('/', ctrlService.add);
 
 module.exports = router;

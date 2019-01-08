@@ -4,8 +4,7 @@ module.exports.get = function(req, res) {
     ServiceType.find()
         .exec()
         .then(docs => {
-            console.log(docs);
-            res.render('serviceType', { items: docs });
+            res.json(docs);
         })
         .catch(err => {
             res.status(500).json(err.message);
@@ -18,7 +17,6 @@ module.exports.getOne = function(req, res) {
     ServiceType.findOne({ _id: id })
         .exec()
         .then(doc => {
-            console.log(doc);
             if (doc !== null) {
                 res.send(doc);
             } else {
@@ -35,7 +33,7 @@ module.exports.delete = function(req, res) {
     const id = req.params.id;
     ServiceType.deleteOne({ _id: id }, function(err) {
         if (err) return handleError(err);
-        res.sendStatus(200);
+        res.status(204).json();
     });
 };
 
@@ -56,8 +54,7 @@ module.exports.add = function(req, res) {
         ServiceType.find()
             .exec()
             .then(docs => {
-                console.log(docs);
-                res.render('serviceType', { items: docs });
+                res.send(docs);
             })
             .catch(err => {
                 res.status(500).json(err.message);
