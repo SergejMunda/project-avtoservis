@@ -1,12 +1,11 @@
-const Service = require('../models/service');
 const ServiceType = require('../models/serviceType');
 
 module.exports.get = function(req, res) {
-    Service.find()
-        .populate('type')
+    ServiceType.find()
         .exec()
         .then(docs => {
-            res.json(docs);
+            console.log(docs);
+            res.render('serviceType', { items: docs });
         })
         .catch(err => {
             res.status(500).json(err.message);
@@ -16,12 +15,12 @@ module.exports.get = function(req, res) {
 
 module.exports.getOne = function(req, res) {
     const id = req.params.id;
-    Service.findOne({ _id: id })
-        .populate('type')
+    ServiceType.findOne({ _id: id })
         .exec()
         .then(doc => {
+            console.log(doc);
             if (doc !== null) {
-                res.json(doc);
+                res.send(doc);
             } else {
                 res.sendStatus(404);
             }
@@ -34,27 +33,31 @@ module.exports.getOne = function(req, res) {
 
 module.exports.delete = function(req, res) {
     const id = req.params.id;
-    Service.deleteOne({ _id: id }, function(err) {
+    ServiceType.deleteOne({ _id: id }, function(err) {
         if (err) return handleError(err);
-        res.sendStatus(204);
+        res.sendStatus(200);
     });
 };
 
 module.exports.update = function(req, res) {
     const id = req.params.id;
-    Service.updateOne({ _id: id }, req.body, function(err, doc) {
+    ServiceType.updateOne({ _id: id }, req.body, function(err, doc) {
         if (err) return handleError(err);
         res.send(doc);
     });
 };
 
-module.exports.addNew = function(req, res) {
-    const service = new Service(req.body);
-    service.save(function(err) {
+module.exports.add = function(req, res) {
+    const serviceType = new ServiceType(req.body);
+    serviceType.save(function(err) {
+        if (err) {
+            res.status(500).send(err);
+        }
         ServiceType.find()
             .exec()
             .then(docs => {
-                res.json(docs);
+                console.log(docs);
+                res.render('serviceType', { items: docs });
             })
             .catch(err => {
                 res.status(500).json(err.message);

@@ -1,5 +1,9 @@
 const User = require('../models/user');
 
+module.exports.get = function(req, res) {
+    res.render('register', {});
+};
+
 module.exports.register = function(req, res) {
     body = req.body;
     console.log(body);
@@ -13,6 +17,6 @@ module.exports.register = function(req, res) {
         if (err) {
             console.log(err);
         }
-        res.sendStatus(200);
+        res.render('login');
     });
 };

@@ -1,0 +1,27 @@
+[
+    {
+        "itemName": "Letne gume",
+        "description": "to so gume",
+        "quantity": 5
+    },
+    {
+        "itemName": "Vijaki",
+        "description": "to so vijaki",
+        "quantity": 12
+    },
+    {
+        "itemName": "Zimske gume",
+        "description": "to so gume",
+        "quantity": 4
+    },
+    {
+        "itemName": "Zavore",
+        "description": "to so zavore",
+        "quantity": 5
+    },
+    {
+        "itemName": "Diski",
+        "description": "to so diski",
+        "quantity": 5
+    }
+]

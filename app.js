@@ -5,11 +5,11 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 require('./api/models/db');
 
-const indexRouter = require('./api/routes/index');
+// const indexRouter = require('./api/routes/index');
 const usersRouter = require('./api/routes/users');
-const loginRouter = require('./api/routes/login');
+// const loginRouter = require('./api/routes/login');
 const registerRouter = require('./api/routes/register');
-const contactRouter = require('./api/routes/contact');
+// const contactRouter = require('./api/routes/contact');
 const serviceRouter = require('./api/routes/service');
 const inventoryRouter = require('./api/routes/inventory');
 const dbRouter = require('./api/routes/db');
@@ -35,15 +35,15 @@ app.use('/services/add', express.static(path.join(__dirname, 'public')));
 app.use('/inventory', express.static(path.join(__dirname, 'public')));
 app.use('/inventory/add', express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
-app.use('/contact', contactRouter);
-app.use('/services', serviceRouter);
-app.use('/inventory', inventoryRouter);
-app.use('/db', dbRouter);
-app.use('/serviceTypes', serviceTypeRouter);
+// app.use('/', indexRouter);
+app.use('/api/users', usersRouter);
+// app.use('/api/login', loginRouter);
+app.use('/api/register', registerRouter);
+// app.use('/contact', contactRouter);
+app.use('/api/services', serviceRouter);
+app.use('/api/inventory', inventoryRouter);
+app.use('/api/db', dbRouter);
+app.use('/api/serviceTypes', serviceTypeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
