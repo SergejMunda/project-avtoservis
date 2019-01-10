@@ -1,0 +1,30 @@
+<naviga></naviga>
+
+<div class="container-fluid">
+  <div class="main-content">
+    <div class="col-xs-12 col-md-12 col-sm-12" id="list">
+      <h3>Inventory</h3>
+      <div class="line row table-header">
+        <div class="col-md-2 col-12">Item</div>
+        <div class="col-md-2 col-12">Description</div>
+        <div class="col-md-3 col-12">Quantity</div>
+    </div>
+    <div ng-repeat="item in vm.data.items" class="line row">
+          <div class="ime.col-md-2 col-12">{{item.itemName}}</div>
+          <div class="col-md-2 col-12">{{item.description}}</div>
+          <div class="col-md-2 col-12">{{item.quantity}}</div>
+          <div class="edit-buttons align-self-end col-md-1 col-12">
+            <div class="btn btn-secondary mr-4" ng-click="vm.deleteInventory('')">Delete</div>
+          </div>
+          <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4" href="/inventory/form/">Edit</a></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4" href="/inventory/form">Add</a></div>
+        <form class="form-inline my-2 my-lg-0" id="forma">
+          <input class="form-control mr-sm-2" id="search" type="text" placeholder="Search"/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

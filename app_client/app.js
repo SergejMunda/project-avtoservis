@@ -17,6 +17,16 @@
                 controller: 'serviceFormCtrl',
                 controllerAs: 'vm'
             })
+            .when('/inventory',{
+                templateUrl: 'inventory/inventory.view.html',
+                controller: 'inventoryCtrl',
+                controllerAs: 'vm'
+            })
+             .when('/inventory/form', {
+                templateUrl: 'inventoryForm/inventoryForm.view.html',
+                controller: 'inventoryFormCtrl',
+                controllerAs: 'vm'
+             })
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
