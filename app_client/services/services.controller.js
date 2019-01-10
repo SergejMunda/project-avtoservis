@@ -1,14 +1,42 @@
 (function() {
-    function serviceCtrl(serviceData) {
+    function serviceCtrl(serviceData, $uibModal) {
         var vm = this;
         vm.title = 'Services';
         vm.msg = 'Searching sevices...';
         // vm.data.services = [
         //     { firstName: 'rere', lastName: 'sad', email: 'asd@asd.sad', phoneNumber: '213123' }
         // ];
+        vm.deleteService = function(id, index) {
+            serviceData.serviceDelete(id).then(
+                function succes(response) {
+                    vm.data.services.splice(index, 1);
+                },
+                function error(response) {
+                    vm.msg = 'Delete failed.';
+                    console.log(response.e);
+                }
+            );
+        };
+
+        vm.serviceFormModal = function() {
+            $uibModal
+                .open({
+                    templateUrl: '/serviceForm/serviceForm.view.html',
+                    controller: 'serviceFormCtrl',
+                    controllerAs: 'vm'
+                })
+                .result.then(
+                    function(podatki) {
+                        if (typeof podatki != 'undefined') vm.data.services.push(podatki);
+                    },
+                    function(napaka) {
+                        // Ulovi dogodek in ne naredi ničesar
+                    }
+                );
+        };
+
         serviceData.services().then(
             function succes(response) {
-                console.log(response);
                 vm.msg = response.data.length > 0 ? '' : 'No services.';
                 vm.data = { services: response.data };
             },
@@ -18,7 +46,7 @@
             }
         );
     }
-    serviceCtrl.$inject = ['serviceData'];
+    serviceCtrl.$inject = ['serviceData', '$uibModal'];
 
     /* global angular */
     angular.module('autoService').controller('servicesCtrl', serviceCtrl);

@@ -51,14 +51,7 @@ module.exports.update = function(req, res) {
 module.exports.addNew = function(req, res) {
     const service = new Service(req.body);
     service.save(function(err) {
-        ServiceType.find()
-            .exec()
-            .then(docs => {
-                res.json(docs);
-            })
-            .catch(err => {
-                res.status(500).json(err.message);
-                console.log(err.message);
-            });
+        if (err) return handleError(err);
+        res.send(service);
     });
 };

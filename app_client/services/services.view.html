@@ -17,7 +17,10 @@
                     </div>
                 </div>
                 <div class="edit-buttons align-self-end col-md-1 col-12">
-                    <div class="btn btn-secondary mr-4" ng-click="vm.deleteService(service._id)">
+                    <div
+                        class="btn btn-secondary mr-4"
+                        ng-click="vm.deleteService(service._id, $index)"
+                    >
                         Delete
                     </div>
                 </div>
@@ -45,7 +48,7 @@
             </div>
             <div class="row">
                 <div class="edit-buttons align-self-end col-md-4 col-12">
-                    <a class="btn btn-secondary mr-4" href="/services/form">Add</a>
+                    <a class="btn btn-secondary mr-4" ng-click="vm.serviceFormModal()">Add</a>
                 </div>
             </div>
         </div>
