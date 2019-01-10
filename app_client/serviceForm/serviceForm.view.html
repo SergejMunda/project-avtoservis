@@ -1,0 +1,70 @@
+<naviga></naviga>
+
+<div class="container-fluid">
+    <form action="/services/add" method="POST" onsubmit="return serviceForm(event)">
+        <div class="form-group">
+            <label for="firstName">First name</label
+            ><input
+                class="form-control"
+                id="firstname"
+                type="text"
+                name="firstName"
+                placeholder="Enter first name"
+                required=""
+            />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label
+            ><input
+                class="form-control"
+                id="lastname"
+                type="text"
+                name="lastName"
+                placeholder="Enter last name"
+                required=""
+            />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label
+            ><input
+                class="form-control"
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Enter email"
+                required=""
+            />
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone number</label
+            ><input
+                class="form-control"
+                id="phonenumber"
+                type="text"
+                name="phoneNumber"
+                placeholder="+386..."
+                required=""
+            />
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label
+            ><input
+                class="form-control"
+                id="time"
+                type="datetime-local"
+                name="time"
+                placeholder="yyyy-mm-dd hh:hh"
+                required=""
+            />
+        </div>
+        <div class="form-group">
+            <label for="type">Type</label
+            ><select class="form-control" id="item" name="type"
+                ><option value="5c0ea2313eca67001c15f89f">Menjava gum</option
+                ><option value="5c0ea2313eca67001c15f8a0">Menjava olja</option></select
+            >
+        </div>
+        <a class="btn btn-secondary mr-4" href="/services">Back</a
+        ><input class="btn btn-secondary" type="submit" value="Submit" />
+    </form>
+</div>

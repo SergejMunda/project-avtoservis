@@ -21,5 +21,5 @@
     serviceCtrl.$inject = ['serviceData'];
 
     /* global angular */
-    angular.module('autoService').controller('serviceCtrl', serviceCtrl);
+    angular.module('autoService').controller('servicesCtrl', serviceCtrl);
 })();

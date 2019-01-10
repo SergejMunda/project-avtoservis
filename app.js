@@ -24,7 +24,11 @@ var combinedCode = uglifyJs.minify({
         'app_client/all/services/serviceData.service.js',
         'utf-8'
     ),
-    'service.controller.js': fs.readFileSync('app_client/service/service.controller.js', 'utf-8'),
+    'service.controller.js': fs.readFileSync('app_client/services/services.controller.js', 'utf-8'),
+    'service-form.controller.js': fs.readFileSync(
+        'app_client/serviceForm/serviceForm.controller.js',
+        'utf-8'
+    ),
     'nav.directive.js': fs.readFileSync('app_client/all/directives/nav/nav.directive.js', 'utf-8')
 });
 
