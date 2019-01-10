@@ -1,6 +1,4 @@
 {
-    "env": {
-        "MONGO_USERNAME": "Avtoservis1",
-        "MONGO_PW": "Avtoservis1"
-    }
+    "verbose": true,
+    "ignore": ["public/*"]
 }
