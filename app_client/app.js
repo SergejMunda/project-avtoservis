@@ -4,7 +4,7 @@
         $routeProvider
             .when('/', {
                 templateUrl: 'services/services.view.html',
-                controller: 'serviceCtrl',
+                controller: 'servicesCtrl',
                 controllerAs: 'vm'
             })
             .when('/services', {
@@ -12,11 +12,11 @@
                 controller: 'servicesCtrl',
                 controllerAs: 'vm'
             })
-            .when('/services/form', {
-                templateUrl: 'serviceForm/serviceForm.view.html',
-                controller: 'serviceFormCtrl',
-                controllerAs: 'vm'
-            })
+            // .when('/services/form', {
+            //     templateUrl: 'serviceForm/serviceForm.view.html',
+            //     controller: 'serviceFormCtrl',
+            //     controllerAs: 'vm'
+            // })
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
@@ -30,6 +30,6 @@
 
     /* global angular */
     angular
-        .module('autoService', ['ngRoute'])
+        .module('autoService', ['ngRoute', 'ui.bootstrap'])
         .config(['$routeProvider', '$locationProvider', provider]);
 })();

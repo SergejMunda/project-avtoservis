@@ -3,6 +3,10 @@
     bottom: 0;
 }
 
+.modal-body {
+    margin: 30px;
+}
+
 .margin-top {
     margin-top: 20px;
 }

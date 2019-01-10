@@ -1,70 +1,77 @@
-<naviga></naviga>
-
-<div class="container-fluid">
-    <form action="/services/add" method="POST" onsubmit="return serviceForm(event)">
+<div class="modal-body">
+    <form role="form" ng-submit="vm.saveData()">
         <div class="form-group">
-            <label for="firstName">First name</label
-            ><input
+            <label for="firstName">First name</label>
+            <input
                 class="form-control"
                 id="firstname"
                 type="text"
                 name="firstName"
                 placeholder="Enter first name"
                 required=""
+                ng-model="vm.data.firstName"
             />
         </div>
         <div class="form-group">
-            <label for="lastName">Last name</label
-            ><input
+            <label for="lastName">Last name</label>
+            <input
                 class="form-control"
                 id="lastname"
                 type="text"
                 name="lastName"
                 placeholder="Enter last name"
                 required=""
+                ng-model="vm.data.lastName"
             />
         </div>
         <div class="form-group">
-            <label for="email">Email</label
-            ><input
+            <label for="email">Email</label>
+            <input
                 class="form-control"
                 id="email"
                 type="text"
                 name="email"
                 placeholder="Enter email"
                 required=""
+                ng-model="vm.data.email"
             />
         </div>
         <div class="form-group">
-            <label for="phoneNumber">Phone number</label
-            ><input
+            <label for="phoneNumber">Phone number</label>
+            <input
                 class="form-control"
                 id="phonenumber"
                 type="text"
                 name="phoneNumber"
                 placeholder="+386..."
                 required=""
+                ng-model="vm.data.phoneNumber"
             />
         </div>
         <div class="form-group">
-            <label for="time">Time</label
-            ><input
+            <label for="time">Time</label>
+            <input
                 class="form-control"
                 id="time"
                 type="datetime-local"
                 name="time"
                 placeholder="yyyy-mm-dd hh:hh"
                 required=""
+                ng-model="vm.data.time"
             />
         </div>
         <div class="form-group">
-            <label for="type">Type</label
-            ><select class="form-control" id="item" name="type"
-                ><option value="5c0ea2313eca67001c15f89f">Menjava gum</option
-                ><option value="5c0ea2313eca67001c15f8a0">Menjava olja</option></select
-            >
+            <label for="type">Type</label>
+            <select class="form-control" id="item" name="type" ng-model="vm.data.type">
+                <option value="5c0ea2313eca67001c15f89f">Menjava gum</option>
+                <option value="5c0ea2313eca67001c15f8a0">Menjava olja</option>
+            </select>
         </div>
-        <a class="btn btn-secondary mr-4" href="/services">Back</a
-        ><input class="btn btn-secondary" type="submit" value="Submit" />
+        <input class="btn btn-secondary" type="submit" value="Submit" />
     </form>
+    <div class="modal-footer">
+        <button ng-click="vm.modalnoOkno.preklici()" type="button" class="btn btn-default btn-sm">
+            Cancel
+        </button>
+    </div>
 </div>
