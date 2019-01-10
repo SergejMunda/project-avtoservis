@@ -12,12 +12,6 @@
                 controller: 'servicesCtrl',
                 controllerAs: 'vm'
             })
-<<<<<<< HEAD
-            .when('/services/form', {
-                templateUrl: 'serviceForm/serviceForm.view.html',
-                controller: 'serviceFormCtrl',
-                controllerAs: 'vm'
-            })
             .when('/inventory',{
                 templateUrl: 'inventory/inventory.view.html',
                 controller: 'inventoryCtrl',
@@ -28,13 +22,11 @@
                 controller: 'inventoryFormCtrl',
                 controllerAs: 'vm'
              })
-=======
             // .when('/services/form', {
             //     templateUrl: 'serviceForm/serviceForm.view.html',
             //     controller: 'serviceFormCtrl',
             //     controllerAs: 'vm'
             // })
->>>>>>> 6993d9a316bc5d542ab31e9555ad38937a48d80e
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
