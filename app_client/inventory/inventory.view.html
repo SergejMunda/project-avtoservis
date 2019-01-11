@@ -16,11 +16,11 @@
           <div class="edit-buttons align-self-end col-md-1 col-12">
             <div class="btn btn-secondary mr-4" ng-click="vm.deleteInventory('')">Delete</div>
           </div>
-          <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4" href="/inventory/form/">Edit</a></div>
+          <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4" ng-click="vm.updateInventory(inventory._id)">Edit</a></div>
         </div>
       </div>
       <div class="row">
-        <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4" href="/inventory/form">Add</a></div>
+        <div class="edit-buttons align-self-end col-md-1 col-12"><a class="btn btn-secondary mr-4"href="/inventory/form">Add</a></div>
         <form class="form-inline my-2 my-lg-0" id="forma">
           <input class="form-control mr-sm-2" id="search" type="text" placeholder="Search"/>
         </form>

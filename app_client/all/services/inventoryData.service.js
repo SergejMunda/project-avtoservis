@@ -3,24 +3,16 @@
         var data = function(){
             return $http.get('/api/inventory');
         };
-        
-        function add($http){
-            var addItem = function(name,description,quantity){
-                return $http({
-                    method : 'POST',
-                    url : 'items',
-                    data : {
-                        name : name,
-                        description: description,
-                        quantity: quantity
-                    }
-                });
-            };
-        }
-        
-        
+        var addNew = function(data){
+            return $http.post('api/inventory/', data);
+        };
+        var inventoryDelete = function(id){
+          return $http.delete('api/inventory/' + id);  
+        };
         return {
-            inventory: data
+            inventory: data,
+            inventoryDelete: inventoryDelete,
+            addNew: addNew
         };
     }
     inventoryData.$inject = ['$http'];
