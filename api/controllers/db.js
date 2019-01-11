@@ -1,6 +1,6 @@
 const Service = require('../models/service');
 const ServiceType = require('../models/serviceType');
-const User = require('../models/user');
+const User = require('../models/users');
 const Inventory = require('../models/inventory');
 
 const servicesPreset = require('../presets/service.json');
