@@ -3,6 +3,10 @@
     bottom: 0;
 }
 
+.edit-buttons {
+    margin: 5px;
+}
+
 .modal-body {
     margin: 30px;
 }

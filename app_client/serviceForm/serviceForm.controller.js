@@ -1,17 +1,20 @@
 (function() {
-    function serviceFormCtrl(serviceData, $uibModalInstance) {
+    function serviceFormCtrl(serviceData, $uibModalInstance, serviceDetails) {
         var vm = this;
         vm.title = 'Services';
         vm.msg = 'Searching sevices...';
 
-        vm.data = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            phoneNumber: '',
-            time: '',
-            type: ''
-        };
+        vm.data =
+            serviceDetails === undefined
+                ? {
+                      firstName: '',
+                      lastName: '',
+                      email: '',
+                      phoneNumber: '',
+                      time: '',
+                      type: ''
+                  }
+                : serviceDetails;
 
         vm.modalnoOkno = {
             preklici: function() {
@@ -20,19 +23,33 @@
         };
 
         vm.saveData = function() {
-            serviceData.addNew(vm.data).then(
-                function succes(response) {
-                    console.log(response);
-                    $uibModalInstance.close(response.data);
-                },
-                function error(response) {
-                    vm.msg = 'Delete failed.';
-                    console.log(response.e);
-                }
-            );
+            console.log(vm.data);
+            if (vm.data._id === undefined) {
+                serviceData.addNew(vm.data).then(
+                    function succes(response) {
+                        console.log(response);
+                        $uibModalInstance.close({ data: response.data, update: false });
+                    },
+                    function error(response) {
+                        vm.msg = 'Delete failed.';
+                        console.log(response.e);
+                    }
+                );
+            } else {
+                serviceData.update(vm.data._id, vm.data).then(
+                    function succes(response) {
+                        console.log(response);
+                        $uibModalInstance.close({ data: response.data, update: true });
+                    },
+                    function error(response) {
+                        vm.msg = 'Delete failed.';
+                        console.log(response.e);
+                    }
+                );
+            }
         };
     }
-    serviceFormCtrl.$inject = ['serviceData', '$uibModalInstance'];
+    serviceFormCtrl.$inject = ['serviceData', '$uibModalInstance', 'serviceDetails'];
 
     /* global angular */
     angular.module('autoService').controller('serviceFormCtrl', serviceFormCtrl);

@@ -9,11 +9,16 @@
         var addNew = function(data) {
             return $http.post('/api/services', data);
         };
+        var update = function(id, data) {
+            console.log('test');
+            return $http.put('/api/services/' + id, data);
+        };
 
         return {
             services: data,
             serviceDelete: serviceDelete,
-            addNew: addNew
+            addNew: addNew,
+            update: update
         };
     }
     serviceData.$inject = ['$http'];

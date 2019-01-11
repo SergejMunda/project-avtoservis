@@ -18,16 +18,25 @@
             );
         };
 
-        vm.serviceFormModal = function() {
+        vm.serviceFormModal = function(data) {
             $uibModal
                 .open({
                     templateUrl: '/serviceForm/serviceForm.view.html',
                     controller: 'serviceFormCtrl',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    resolve: {
+                        serviceDetails: function() {
+                            return data;
+                        }
+                    }
                 })
                 .result.then(
                     function(podatki) {
-                        if (typeof podatki != 'undefined') vm.data.services.push(podatki);
+                        if (typeof podatki != 'undefined') {
+                            if (!podatki.update) {
+                                vm.data.services.push(podatki.data);
+                            }
+                        }
                     },
                     function(napaka) {
                         // Ulovi dogodek in ne naredi ničesar
