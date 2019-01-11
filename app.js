@@ -1,13 +1,19 @@
+require('dotenv').load();
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+
+var passport = require('passport');
+
 require('./api/models/db');
+require('./api/config/passport');
 
 // const indexRouter = require('./api/routes/index');
 const usersRouter = require('./api/routes/users');
-// const loginRouter = require('./api/routes/login');
+const loginRouter = require('./api/routes/login');
 const registerRouter = require('./api/routes/register');
 // const contactRouter = require('./api/routes/contact');
 const serviceRouter = require('./api/routes/service');
@@ -29,12 +35,27 @@ var combinedCode = uglifyJs.minify({
         'app_client/serviceForm/serviceForm.controller.js',
         'utf-8'
     ),
-    'inventory.controller.js': fs.readFileSync('app_client/inventory/inventory.controller.js','utf-8'),
-    'inventoryData.service.js': fs.readFileSync('app_client/all/services/inventoryData.service.js', 'utf-8'),
-    'inventory-form.controller.js': fs.readFileSync('app_client/inventoryForm/inventoryForm.controller.js', 'utf-8'),
+    'inventory.controller.js': fs.readFileSync(
+        'app_client/inventory/inventory.controller.js',
+        'utf-8'
+    ),
+    'inventoryData.service.js': fs.readFileSync(
+        'app_client/all/services/inventoryData.service.js',
+        'utf-8'
+    ),
+    'inventory-form.controller.js': fs.readFileSync(
+        'app_client/inventoryForm/inventoryForm.controller.js',
+        'utf-8'
+    ),
+    'auth.service.js': fs.readFileSync('app_client/all/services/auth.service.js', 'utf-8'),
+    'registration.controller.js': fs.readFileSync(
+        'app_client/auth/registration/registration.controller.js',
+        'utf-8'
+    ),
+    'login.controller.js': fs.readFileSync('app_client/auth/login/login.controller.js', 'utf-8'),
+
     'nav.directive.js': fs.readFileSync('app_client/all/directives/nav/nav.directive.js', 'utf-8')
 });
-
 fs.writeFile('public/angular/autoservice.min.js', combinedCode.code, function(error) {
     if (error) console.log(error);
     else console.log('Script is in "comments.min.js".');
@@ -61,9 +82,10 @@ app.use('/services/add', express.static(path.join(__dirname, 'public')));
 app.use('/inventory', express.static(path.join(__dirname, 'public')));
 app.use('/inventory/add', express.static(path.join(__dirname, 'public')));
 
+app.use(passport.initialize());
 // app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
-// app.use('/api/login', loginRouter);
+app.use('/api/login', loginRouter);
 app.use('/api/register', registerRouter);
 // app.use('/contact', contactRouter);
 app.use('/api/services', serviceRouter);

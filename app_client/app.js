@@ -12,21 +12,26 @@
                 controller: 'servicesCtrl',
                 controllerAs: 'vm'
             })
-            .when('/inventory',{
+            .when('/inventory', {
                 templateUrl: 'inventory/inventory.view.html',
                 controller: 'inventoryCtrl',
                 controllerAs: 'vm'
             })
-             .when('/inventory/form', {
+            .when('/inventory/form', {
                 templateUrl: 'inventoryForm/inventoryForm.view.html',
                 controller: 'inventoryFormCtrl',
                 controllerAs: 'vm'
-             })
-            // .when('/services/form', {
-            //     templateUrl: 'serviceForm/serviceForm.view.html',
-            //     controller: 'serviceFormCtrl',
-            //     controllerAs: 'vm'
-            // })
+            })
+            .when('/login', {
+                templateUrl: 'auth/login/login.view.html',
+                controller: 'loginCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/registration', {
+                templateUrl: '/auth/registration/registration.view.html',
+                controller: 'registrationCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
