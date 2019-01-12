@@ -1,7 +1,11 @@
 (function() {
     function serviceData($http) {
-        var data = function() {
-            return $http.get('/api/services');
+        var data = function(page) {
+            if (!page) {
+                return $http.get('/api/services');
+            } else {
+                return $http.get('/api/services?page=' + page);
+            }
         };
         var serviceDelete = function(id) {
             return $http.delete('/api/services/' + id);
