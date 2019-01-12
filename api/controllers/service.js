@@ -1,10 +1,17 @@
 const Service = require('../models/service');
 const ServiceType = require('../models/serviceType');
 
+const options = {
+    page: 1,
+    limit: 10,
+    populate: 'type'
+};
+
 module.exports.get = function(req, res) {
-    Service.find()
-        .populate('type')
-        .exec()
+    if (req.query.page) {
+        options.page = req.query.page;
+    }
+    Service.paginate({}, options)
         .then(docs => {
             res.json(docs);
         })

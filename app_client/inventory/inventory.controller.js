@@ -1,60 +1,109 @@
-(function(){
-    function inventoryCtrl(inventoryData, $uibModal){
+(function() {
+    function inventoryCtrl(inventoryData, $uibModal) {
         var vm = this;
         vm.title = 'Inventory';
         vm.msg = 'Searching inventory data...';
-        vm.deleteInventory = function(id, index){
+        vm.deleteInventory = function(id, index) {
             inventoryData.inventoryDelete(id).then(
-                function success(response){
-                    vm.data.inventory.splice(index,1);
+                function success(response) {
+                    vm.msg = 'Item deleted successfully';
+                    setTimeout(function() {
+                        vm.msg = '';
+                    }, 3000);
+                    vm.data.inventory.splice(index, 1);
                 },
-                function error(response){
-                    vm.msg= 'Failed to delete';
+                function error(response) {
+                    vm.msg = 'Failed to delete';
                     console.log(response.e);
                 }
             );
         };
-        
-        vm.inventoryFormModal = function(data){
+
+        vm.inventoryFormModal = function(data) {
             $uibModal
-            .open ({
-                templateUrl: '/inventoryForm/inventoryForm.view.html',
-                controller: 'inventoryFormCtrl',
-                controllerAs: 'vm',
-                resolve: {
-                    inventoryDDetails: function(){
-                        return data;
-                    }
-                }
-            })
-            .result.then(
-                function(podatki) {
-                    if (typeof podatki != 'undefined') {
-                        if (!podatki.update) {
-                            vm.data.inventory.push(podatki.data);
+                .open({
+                    templateUrl: '/inventoryForm/inventoryForm.view.html',
+                    controller: 'inventoryFormCtrl',
+                    controllerAs: 'vm',
+                    resolve: {
+                        inventoryDetails: function() {
+                            return data;
                         }
                     }
+                })
+                .result.then(
+                    function(podatki) {
+                        if (typeof podatki != 'undefined') {
+                            if (!podatki.update) {
+                                vm.msg = 'Item added successfully';
+                                setTimeout(function() {
+                                    vm.msg = '';
+                                }, 3000);
+                                vm.data.inventory.push(podatki.data);
+                            } else {
+                                vm.msg = 'Item updated successfully';
+                                setTimeout(function() {
+                                    vm.msg = '';
+                                }, 3000);
+                            }
+                        }
+                    },
+                    function(napaka) {
+                        //cath and release
+                    }
+                );
+        };
+        vm.goToNextPage = function() {
+            inventoryData.inventory(vm.data.nextPage).then(
+                function success(response) {
+                    vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
+                    vm.data = {
+                        inventory: response.data.docs,
+                        nextPage: response.data.nextPage,
+                        prevPage: response.data.prevPage
+                    };
                 },
-                function(napaka){
-                    //cath and release
+                function error(response) {
+                    vm.msg = 'An error occured when fetching data from inventory.';
+                    console.log(response.e);
                 }
             );
         };
-        
+        vm.goToPrevPage = function() {
+            inventoryData.inventory(vm.data.prevPage).then(
+                function success(response) {
+                    vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
+                    vm.data = {
+                        inventory: response.data.docs,
+                        nextPage: response.data.nextPage,
+                        prevPage: response.data.prevPage
+                    };
+                },
+                function error(response) {
+                    vm.msg = 'An error occured when fetching data from inventory.';
+                    console.log(response.e);
+                }
+            );
+        };
+
         inventoryData.inventory().then(
-            function success(response){
+            function success(response) {
                 console.log(response);
-                vm.msg = response.data.length > 0 ? '' : 'No data in inventory.';
-                vm.data = { inventory: response.data };
+                vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
+                vm.data = {
+                    inventory: response.data.docs,
+                    nextPage: response.data.nextPage,
+                    prevPage: response.data.prevPage
+                };
             },
-            function error(response){
+            function error(response) {
                 vm.msg = 'An error occured when fetching data from inventory.';
                 console.log(response.e);
             }
         );
     }
     inventoryCtrl.$inject = ['inventoryData', '$uibModal'];
-    
+
     /* global angular */
-    angular.module('autoService').controller('inventoryCtrl',inventoryCtrl );
+    angular.module('autoService').controller('inventoryCtrl', inventoryCtrl);
 })();

@@ -1,5 +1,7 @@
 <naviga></naviga>
 
+<div role="alert" ng-show="vm.msg" class="alert alert-info">{{ vm.msg }}</div>
+
 <div class="container-fluid">
     <div class="main-content">
         <div class="col-xs-12 col-md-12 col-sm-12" id="list">
@@ -10,7 +12,7 @@
             </div>
             <div ng-repeat="service in vm.data.services" class="line row">
                 <div class="col-md-2 col-12">{{ service.type.type }}</div>
-                <div class="col-md-3 col-12">{{ service.time }}</div>
+                <div class="col-md-3 col-12">{{ service.time | date: 'short' }}</div>
                 <div class="edit-buttons align-self-end col-md-1 col-12">
                     <div class="btn btn-secondary mr-4" ng-click="vm.serviceDetails(service._id)">
                         Details
@@ -49,6 +51,11 @@
                     <a class="btn btn-primary mr-4" ng-click="vm.serviceFormModal()">Add</a>
                 </div>
             </div>
+            <div role="alert" ng-show="vm.error" class="alert alert-danger">{{ vm.error }}</div>
         </div>
+    </div>
+    <div>
+        <button ng-show="vm.data.nextPage" ng-click="vm.goToNextPage()">Next</button>
+        <button ng-show="vm.data.prevPage" ng-click="vm.goToPrevPage()">Previous</button>
     </div>
 </div>

@@ -1,9 +1,16 @@
 const Inventory = require('../models/inventory');
 const mongoose = require('mongoose');
 
+const options = {
+    page: 1,
+    limit: 10
+};
+
 module.exports.get = function(req, res) {
-    Inventory.find()
-        .exec()
+    if (req.query.page) {
+        options.page = req.query.page;
+    }
+    Inventory.paginate({}, options)
         .then(docs => {
             res.send(docs);
         })
