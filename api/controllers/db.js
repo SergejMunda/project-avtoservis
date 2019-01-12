@@ -7,17 +7,6 @@ const servicesPreset = require('../presets/service.json');
 const usersPreset = require('../presets/user.json');
 const inventoryPreset = require('../presets/inventory.json');
 
-const mongoose = require('mongoose');
-
-findTypes = function(name) {
-    ServiceType.findOne({ type: name })
-        .exec()
-        .then(function(id) {
-            console.log(id);
-            return id;
-        });
-};
-
 module.exports.delete = function(req, res) {
     Service.deleteMany({}, function(err) {
         if (err) return handleError(err);
@@ -36,10 +25,6 @@ module.exports.delete = function(req, res) {
         // deleted at most one tank document
     });
     res.sendStatus(200);
-};
-
-module.exports.get = function(req, res) {
-    res.render('db');
 };
 
 module.exports.loadPresets = function(req, res) {

@@ -50,7 +50,8 @@ module.exports.register = function(req, res) {
 
     var user = new User({
         name: req.body.name,
-        mail: req.body.mail
+        mail: req.body.mail,
+        permissions: req.body.admin ? ['ADMIN'] : ['USER']
     });
 
     user.storePassword(req.body.pass);

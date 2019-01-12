@@ -1,16 +1,25 @@
 const express = require('express');
 const router = express.Router();
 
+var jwt = require('express-jwt');
+var avtentikacija = jwt({
+    secret: process.env.JWT_PASS,
+    userProperty: 'payload'
+});
+var guard = require('express-jwt-permissions')({
+    requestProperty: 'payload'
+});
+
 const ctrlInventory = require('../controllers/inventory');
 
-router.get('/', ctrlInventory.get);
+router.get('/', avtentikacija, ctrlInventory.get);
 
-router.delete('/:id', ctrlInventory.delete);
+router.delete('/:id', avtentikacija, ctrlInventory.delete);
 
-router.put('/:id', ctrlInventory.update);
+router.put('/:id', avtentikacija, ctrlInventory.update);
 
-router.get('/:id', ctrlInventory.getOne);
+router.get('/:id', avtentikacija, ctrlInventory.getOne);
 
-router.post('/', ctrlInventory.addNew);
+router.post('/', avtentikacija, ctrlInventory.addNew);
 
 module.exports = router;

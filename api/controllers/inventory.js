@@ -1,5 +1,6 @@
 const Inventory = require('../models/inventory');
 const mongoose = require('mongoose');
+var jwtDecode = require('jwt-decode');
 
 const options = {
     page: 1,
@@ -7,6 +8,8 @@ const options = {
 };
 
 module.exports.get = function(req, res) {
+    // console.log(req.headers.authorization.split('.')[1]);
+
     if (req.query.page) {
         options.page = req.query.page;
     }
@@ -38,12 +41,18 @@ module.exports.getOne = function(req, res) {
 };
 
 module.exports.delete = function(req, res) {
-    const id = req.params.id;
-    Inventory.deleteOne({ _id: id }, function(err) {
-        if (err) return handleError(err);
-        // deleted at most one tank document
-        res.status(204).json();
-    });
+    var decoded = jwtDecode(req.headers.authorization);
+    console.log(decoded);
+    if (decoded.permissions.includes('ADMIN')) {
+        const id = req.params.id;
+        Inventory.deleteOne({ _id: id }, function(err) {
+            if (err) return handleError(err);
+            // deleted at most one tank document
+            res.status(204).json();
+        });
+    } else {
+        res.status(401).json({ message: 'Unauthorized' });
+    }
 };
 
 module.exports.update = function(req, res) {

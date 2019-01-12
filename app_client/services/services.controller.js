@@ -1,5 +1,5 @@
 (function() {
-    function serviceCtrl(serviceData, $uibModal) {
+    function serviceCtrl(serviceData, $uibModal, authentication) {
         var vm = this;
         vm.title = 'Services';
         vm.msg = 'Searching sevices...';
@@ -91,6 +91,9 @@
                 }
             );
         };
+        vm.logedin = function() {
+            return authentication.logedin();
+        };
 
         serviceData.services().then(
             function succes(response) {
@@ -107,7 +110,7 @@
             }
         );
     }
-    serviceCtrl.$inject = ['serviceData', '$uibModal'];
+    serviceCtrl.$inject = ['serviceData', '$uibModal', 'authentication'];
 
     /* global angular */
     angular.module('autoService').controller('servicesCtrl', serviceCtrl);

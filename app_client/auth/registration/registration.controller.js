@@ -5,7 +5,8 @@
         vm.registerData = {
             name: '',
             mail: '',
-            pass: ''
+            pass: '',
+            admin: false
         };
 
         vm.firstToDisplay = $location.search().page || '/';
