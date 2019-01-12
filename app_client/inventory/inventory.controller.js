@@ -1,5 +1,5 @@
 (function(){
-    function inventoryCtrl(inventoryData){
+    function inventoryCtrl(inventoryData, $uibModal){
         var vm = this;
         vm.title = 'Inventory';
         vm.msg = 'Searching inventory data...';
@@ -11,6 +11,32 @@
                 function error(response){
                     vm.msg= 'Failed to delete';
                     console.log(response.e);
+                }
+            );
+        };
+        
+        vm.inventoryFormModal = function(data){
+            $uibModal
+            .open ({
+                templateUrl: '/inventoryForm/inventoryForm.view.html',
+                controller: 'inventoryFormCtrl',
+                controllerAs: 'vm',
+                resolve: {
+                    inventoryDDetails: function(){
+                        return data;
+                    }
+                }
+            })
+            .result.then(
+                function(podatki) {
+                    if (typeof podatki != 'undefined') {
+                        if (!podatki.update) {
+                            vm.data.inventory.push(podatki.data);
+                        }
+                    }
+                },
+                function(napaka){
+                    //cath and release
                 }
             );
         };
@@ -27,7 +53,7 @@
             }
         );
     }
-    inventoryCtrl.$inject = ['inventoryData'];
+    inventoryCtrl.$inject = ['inventoryData', '$uibModal'];
     
     /* global angular */
     angular.module('autoService').controller('inventoryCtrl',inventoryCtrl );

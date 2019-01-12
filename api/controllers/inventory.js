@@ -54,10 +54,7 @@ module.exports.update = function(req, res) {
 module.exports.addNew = function(req, res) {
     const inventory = new Inventory(req.body);
     inventory.save(function(err) {
-        if (err) {
-            res.sendStatus(400);
-        } else {
-            res.send(inventory);
-        }
+        if (err) return handleError(err);
+        res.send(inventory);
     });
 };

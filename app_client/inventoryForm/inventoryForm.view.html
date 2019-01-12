@@ -1,44 +1,46 @@
-<naviga></naviga>
-
-<div class="container-fluid">
+<div class="modal-body">
     <form role="form" ng-submit="vm.saveData()">
         <div class="form-group">
             <label for="name">Item</label>
-    <input
-        class="form-control"
-        id="itemname"
-        type="text"
-        name="itemName"
-        placeholder="Enter item name"
-        required="required"
-        ng-model="vm.data.name"
-    />
-    </div>
-    <div class="form-group">
-    <label for="description">Description</label>
-        <input
-        class="form-control"
-        id="description"
-        type="text"
-        name="description"
-        placeholder="Enter description"
-        required="required"
-        ng-model="vm.data.description"
-        />
-    </div>
-    <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input
-        class="form-control"
-        id="quantity"
-        type="text"
-        name="quantity"
-        placeholder="Enter quantity"
-        required="required"
-        ng-model="vm.data.quantity"
-        />
+            <input
+            class="form-control"
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Enter item name"
+            required="required"
+            ng-model="vm.data.name"
+            />
         </div>
-        <a class="btn btn-secondary mr-4" href="/inventory">Back</a>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input
+            class="form-control"
+            id="description"
+            type="text"
+            name="description"
+            placeholder="Enter description"
+            required="required"
+            ng-model="vm.data.description"
+            />
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <input
+            class="form-control"
+            id="quantity"
+            type="text"
+            name="quantity"
+            placeholder="Enter quantity"
+            required="required"
+            ng-model="vm.data.quantity"
+            />
+        </div>
         <input class="btn btn-secondary" type="submit" value="Submit"/>
     </form>
+    <div class="modal-footer">
+        <button ng-click="vm.modalnoOkno.preklici()" type="button" class="btn btn-default btn-sm">
+            Cancel
+        </button>
+    </div>
 </div>
