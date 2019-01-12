@@ -6,6 +6,7 @@ var jwt = require('jsonwebtoken');
 var userSchema = new mongoose.Schema({
     mail: { type: String, unique: true, required: true },
     name: { type: String, required: true },
+    permissions: { type: [String], required: true },
     hashValue: String,
     randValue: String
 });
@@ -48,9 +49,9 @@ userSchema.methods.genJWT = function() {
     //stored in system variable and not the code.
     return jwt.sign(
         {
-            _id: this._id,
             name: this.name,
             mail: this.mail,
+            permissions: this.permissions,
             validityDate: parseInt(validityDate.getTime() / 1000, 10)
         },
         process.env.JWT_PASS

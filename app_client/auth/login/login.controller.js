@@ -1,5 +1,5 @@
 (function() {
-    function loginCtrl(authentication) {
+    function loginCtrl(authentication, $location) {
         var vm = this;
 
         vm.loginData = {
@@ -26,8 +26,8 @@
             authentication.login(vm.loginData).then(
                 function(success) {
                     console.log('dela', success);
-                    // $location.search('page', null);
-                    // $location.path(vm.firstToDisplay);
+
+                    $location.path('/inventory');
                 },
                 function(error) {
                     vm.error = error.data;
@@ -35,7 +35,7 @@
             );
         };
     }
-    loginCtrl.$inject = ['authentication'];
+    loginCtrl.$inject = ['authentication', '$location'];
 
     /* global angular */
     angular.module('autoService').controller('loginCtrl', loginCtrl);

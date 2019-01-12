@@ -40,11 +40,16 @@ module.exports.getOne = function(req, res) {
 };
 
 module.exports.delete = function(req, res) {
-    const id = req.params.id;
-    Service.deleteOne({ _id: id }, function(err) {
-        if (err) return handleError(err);
-        res.sendStatus(204);
-    });
+    var decoded = jwtDecode(req.headers.authorization);
+    if (decoded.permissions.includes('ADMIN')) {
+        const id = req.params.id;
+        Service.deleteOne({ _id: id }, function(err) {
+            if (err) return handleError(err);
+            res.sendStatus(204);
+        });
+    } else {
+        res.status(401).json({ message: 'Unauthorized' });
+    }
 };
 
 module.exports.update = function(req, res) {
