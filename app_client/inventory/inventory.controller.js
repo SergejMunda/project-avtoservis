@@ -3,6 +3,14 @@
         var vm = this;
         vm.title = 'Inventory';
         vm.msg = 'Searching inventory data...';
+        vm.searchText = '';
+
+        vm.search = function() {
+            vm.data.inventory = vm.data.allInventory.filter(function(el) {
+                return el.itemName.includes(vm.searchText);
+            });
+        };
+
         vm.deleteInventory = function(id, index) {
             inventoryData.inventoryDelete(id).then(
                 function success(response) {
@@ -58,6 +66,7 @@
                 function success(response) {
                     vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
                     vm.data = {
+                        allInventory: response.data.docs,
                         inventory: response.data.docs,
                         nextPage: response.data.nextPage,
                         prevPage: response.data.prevPage
@@ -74,6 +83,7 @@
                 function success(response) {
                     vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
                     vm.data = {
+                        allInventory: response.data.docs,
                         inventory: response.data.docs,
                         nextPage: response.data.nextPage,
                         prevPage: response.data.prevPage
@@ -91,6 +101,7 @@
                 console.log(response);
                 vm.msg = response.data.docs.length > 0 ? '' : 'No data in inventory.';
                 vm.data = {
+                    allInventory: response.data.docs,
                     inventory: response.data.docs,
                     nextPage: response.data.nextPage,
                     prevPage: response.data.prevPage
