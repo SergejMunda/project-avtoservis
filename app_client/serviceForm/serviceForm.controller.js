@@ -1,5 +1,11 @@
 (function() {
-    function serviceFormCtrl(serviceData, $uibModalInstance, serviceDetails, audit) {
+    function serviceFormCtrl(
+        serviceData,
+        $uibModalInstance,
+        serviceDetails,
+        audit,
+        serviceTypeData
+    ) {
         var vm = this;
         vm.title = 'Services';
         vm.msg = 'Searching sevices...';
@@ -48,10 +54,28 @@
                 );
             }
         };
+        serviceTypeData.serviceTypes().then(
+            function succes(response) {
+                vm.msg = response.data.length > 0 ? '' : 'No serviceType.';
+                vm.data = {
+                    serviceTypes: response.data
+                };
+            },
+            function error(response) {
+                vm.msg = 'Error while fetching serviceType.';
+                console.log(response.e);
+            }
+        );
 
         audit.log('serviceForm');
     }
-    serviceFormCtrl.$inject = ['serviceData', '$uibModalInstance', 'serviceDetails', 'audit'];
+    serviceFormCtrl.$inject = [
+        'serviceData',
+        '$uibModalInstance',
+        'serviceDetails',
+        'audit',
+        'serviceTypeData'
+    ];
 
     /* global angular */
     angular.module('autoService').controller('serviceFormCtrl', serviceFormCtrl);

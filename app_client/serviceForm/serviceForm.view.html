@@ -63,8 +63,9 @@
         <div class="form-group">
             <label for="type">Type</label>
             <select class="form-control" id="item" name="type" ng-model="vm.data.type">
-                <option value="5c0ea2313eca67001c15f89f">Menjava gum</option>
-                <option value="5c0ea2313eca67001c15f8a0">Menjava olja</option>
+                <option ng-repeat="service in vm.data.serviceTypes" value="service._id"
+                    >{{ service.type }}
+                </option>
             </select>
         </div>
         <input class="btn btn-secondary" type="submit" value="Submit" />

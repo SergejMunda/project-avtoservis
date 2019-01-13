@@ -45,7 +45,8 @@
                 var content = JSON.parse($window.atob(token.split('.')[1]));
                 return {
                     mail: content.mail,
-                    name: content.name
+                    name: content.name,
+                    permissions: content.permissions
                 };
             }
         };
