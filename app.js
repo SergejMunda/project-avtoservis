@@ -39,6 +39,14 @@ var combinedCode = uglifyJs.minify({
         'app_client/inventory/inventory.controller.js',
         'utf-8'
     ),
+    'frontPage.controller.js': fs.readFileSync(
+        'app_client/frontPage/frontPage.controller.js',
+        'utf-8'
+    ),
+    'contact.controller.js': fs.readFileSync(
+        'app_client/contact/contact.controller.js',
+        'utf-8'
+    ),
     'inventoryData.service.js': fs.readFileSync(
         'app_client/all/services/inventoryData.service.js',
         'utf-8'

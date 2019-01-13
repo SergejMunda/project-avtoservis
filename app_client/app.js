@@ -3,8 +3,8 @@
     function provider($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'services/services.view.html',
-                controller: 'servicesCtrl',
+                templateUrl: 'frontPage/frontPage.view.html',
+                controller: 'frontPageCtrl',
                 controllerAs: 'vm'
             })
             .when('/services', {
@@ -30,6 +30,11 @@
             .when('/registration', {
                 templateUrl: '/auth/registration/registration.view.html',
                 controller: 'registrationCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/contact', {
+                templateUrl: 'contact/contact.view.html',
+                controller: 'contactCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({ redirectTo: '/' });
