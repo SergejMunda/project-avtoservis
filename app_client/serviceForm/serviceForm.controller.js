@@ -1,5 +1,5 @@
 (function() {
-    function serviceFormCtrl(serviceData, $uibModalInstance, serviceDetails) {
+    function serviceFormCtrl(serviceData, $uibModalInstance, serviceDetails, audit) {
         var vm = this;
         vm.title = 'Services';
         vm.msg = 'Searching sevices...';
@@ -48,8 +48,10 @@
                 );
             }
         };
+
+        audit.log('serviceForm');
     }
-    serviceFormCtrl.$inject = ['serviceData', '$uibModalInstance', 'serviceDetails'];
+    serviceFormCtrl.$inject = ['serviceData', '$uibModalInstance', 'serviceDetails', 'audit'];
 
     /* global angular */
     angular.module('autoService').controller('serviceFormCtrl', serviceFormCtrl);

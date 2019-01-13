@@ -42,11 +42,11 @@ module.exports.getOne = function(req, res) {
 
 module.exports.delete = function(req, res) {
     var decoded = jwtDecode(req.headers.authorization);
-    console.log(decoded);
+
     if (decoded.permissions.includes('ADMIN')) {
         const id = req.params.id;
         Inventory.deleteOne({ _id: id }, function(err) {
-            if (err) return handleError(err);
+            if (err) return res.status(404).send(err);
             // deleted at most one tank document
             res.status(204).json();
         });
@@ -59,7 +59,7 @@ module.exports.update = function(req, res) {
     const id = req.params.id;
 
     Inventory.updateOne({ _id: id }, req.body, function(err, doc) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
 
         // deleted at most one tank document
 
@@ -70,7 +70,7 @@ module.exports.update = function(req, res) {
 module.exports.addNew = function(req, res) {
     const inventory = new Inventory(req.body);
     inventory.save(function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         res.send(inventory);
     });
 };

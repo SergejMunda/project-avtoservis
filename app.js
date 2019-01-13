@@ -20,6 +20,7 @@ const serviceRouter = require('./api/routes/service');
 const inventoryRouter = require('./api/routes/inventory');
 const dbRouter = require('./api/routes/db');
 const serviceTypeRouter = require('./api/routes/serviceType');
+const auditRouter = require('./api/routes/audience');
 
 var uglifyJs = require('uglify-js');
 var fs = require('fs');
@@ -43,18 +44,13 @@ var combinedCode = uglifyJs.minify({
         'app_client/frontPage/frontPage.controller.js',
         'utf-8'
     ),
-    'contact.controller.js': fs.readFileSync(
-        'app_client/contact/contact.controller.js',
-        'utf-8'
-    ),
-    'dbPage.controller.js': fs.readFileSync(
-        'app_client/dbPage/dbPage.controller.js',
-        'utf-8'
-    ),
+    'contact.controller.js': fs.readFileSync('app_client/contact/contact.controller.js', 'utf-8'),
+    'dbPage.controller.js': fs.readFileSync('app_client/dbPage/dbPage.controller.js', 'utf-8'),
     'inventoryData.service.js': fs.readFileSync(
         'app_client/all/services/inventoryData.service.js',
         'utf-8'
     ),
+    'audit.service.js': fs.readFileSync('app_client/all/services/audit.service.js', 'utf-8'),
     'inventory-form.controller.js': fs.readFileSync(
         'app_client/inventoryForm/inventoryForm.controller.js',
         'utf-8'
@@ -86,6 +82,12 @@ app.use(
         extended: false
     })
 );
+app.use(function(req, res, next) {
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    next();
+});
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app_client')));
@@ -104,6 +106,7 @@ app.use('/api/services', serviceRouter);
 app.use('/api/inventory', inventoryRouter);
 app.use('/api/db', dbRouter);
 app.use('/api/serviceTypes', serviceTypeRouter);
+app.use('/api/audit', auditRouter);
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
@@ -135,5 +138,8 @@ app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error');
 });
-
+handleError = function(err, res) {
+    res.status(err.status || 500);
+    res.render(err.message || 'error');
+};
 module.exports = app;

@@ -1,21 +1,40 @@
 (function() {
-    function serviceData($http) {
+    function serviceData($http, authentication) {
         var data = function(page) {
             if (!page) {
-                return $http.get('/api/services');
+                return $http.get('/api/services', {
+                    headers: {
+                        Authorization: 'Bearer ' + authentication.returnToken()
+                    }
+                });
             } else {
-                return $http.get('/api/services?page=' + page);
+                return $http.get('/api/services?page=' + page, {
+                    headers: {
+                        Authorization: 'Bearer ' + authentication.returnToken()
+                    }
+                });
             }
         };
         var serviceDelete = function(id) {
-            return $http.delete('/api/services/' + id);
+            return $http.delete('/api/services/' + id, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.returnToken()
+                }
+            });
         };
         var addNew = function(data) {
-            return $http.post('/api/services', data);
+            return $http.post('/api/services', data, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.returnToken()
+                }
+            });
         };
         var update = function(id, data) {
-            console.log('test');
-            return $http.put('/api/services/' + id, data);
+            return $http.put('/api/services/' + id, data, {
+                headers: {
+                    Authorization: 'Bearer ' + authentication.returnToken()
+                }
+            });
         };
 
         return {
@@ -25,7 +44,7 @@
             update: update
         };
     }
-    serviceData.$inject = ['$http'];
+    serviceData.$inject = ['$http', 'authentication'];
 
     /* global angular */
     angular.module('autoService').service('serviceData', serviceData);

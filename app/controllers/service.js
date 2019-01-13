@@ -20,7 +20,7 @@ module.exports.get = function(req, res) {
 module.exports.delete = function(req, res) {
     const id = req.params.id;
     Service.deleteOne({ _id: id }, function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         res.sendStatus(200);
     });
 };
@@ -28,7 +28,7 @@ module.exports.delete = function(req, res) {
 module.exports.update = function(req, res) {
     const id = req.params.id;
     Service.updateOne({ _id: id }, req.body, function(err, doc) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         Service.find()
             .populate('type')
             .exec()

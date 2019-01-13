@@ -111,3 +111,17 @@ User must pick one of the types possible for service
 -   install dependencies with `npm install`
 -   use command `npm start` or `nodemon` to start the app
 -   app is running on url `localhost:3000`
+
+## Users
+
+-   GUEST\
+    Can view: front page, service, serviceType, contact, login, register, database
+
+-   USER\
+    view: front page, service, serviceType, contact, login, register, database, inventory
+    Add, edit: service, serviceType, inventory
+
+-   ADMIN\
+    view: front page, service, serviceType, contact, login, register, database, inventory
+    add, edit: service, serviceType, inventory
+    delete: service, serviceType, inventory
