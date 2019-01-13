@@ -1,5 +1,6 @@
 const Service = require('../models/service');
 const ServiceType = require('../models/serviceType');
+var jwtDecode = require('jwt-decode');
 
 const options = {
     page: 1,

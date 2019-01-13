@@ -1,0 +1,44 @@
+<naviga></naviga>
+
+<div role="alert" ng-show="vm.msg" class="alert alert-info">{{ vm.msg }}</div>
+
+<div class="container-fluid">
+    <div class="main-content">
+        <div class="col-xs-12 col-md-12 col-sm-12" id="list">
+            <h3>Services</h3>
+            <div class="line row table-header">
+                <div class="col-md-2 col-12">Type</div>
+                <div class="col-md-3 col-12">Time</div>
+            </div>
+            <div ng-repeat="service in vm.data.serviceType" class="line row">
+                <div class="col-md-2 col-12">{{ service.type }}</div>
+                <div class="edit-buttons align-self-end col-md-1 col-12">
+                    <div
+                        class="btn btn-danger mr-4"
+                        ng-click="vm.deleteService(service._id, $index)"
+                    >
+                        Delete
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="edit-buttons align-self-end col-md-4 col-12">
+                    <div class="form-group">
+                        <label for="servicetype">Last name</label>
+                        <input
+                            class="form-control"
+                            id="servicetype"
+                            type="text"
+                            name="servicetype"
+                            placeholder="Enter service type"
+                            required=""
+                            ng-model="vm.post.type"
+                        />
+                    </div>
+                    <a class="btn btn-primary mr-4" ng-click="vm.add()">Add</a>
+                </div>
+            </div>
+            <div role="alert" ng-show="vm.error" class="alert alert-danger">{{ vm.error }}</div>
+        </div>
+    </div>
+</div>

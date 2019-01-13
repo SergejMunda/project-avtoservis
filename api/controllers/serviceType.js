@@ -51,14 +51,6 @@ module.exports.add = function(req, res) {
         if (err) {
             res.status(500).send(err);
         }
-        ServiceType.find()
-            .exec()
-            .then(docs => {
-                res.send(docs);
-            })
-            .catch(err => {
-                res.status(500).json(err.message);
-                console.log(err.message);
-            });
+        res.send(serviceType);
     });
 };

@@ -46,9 +46,17 @@ var combinedCode = uglifyJs.minify({
         'utf-8'
     ),
     'contact.controller.js': fs.readFileSync('app_client/contact/contact.controller.js', 'utf-8'),
+    'serviceType.controller.js': fs.readFileSync(
+        'app_client/serviceType/serviceType.controller.js',
+        'utf-8'
+    ),
     'dbPage.controller.js': fs.readFileSync('app_client/dbPage/dbPage.controller.js', 'utf-8'),
     'inventoryData.service.js': fs.readFileSync(
         'app_client/all/services/inventoryData.service.js',
+        'utf-8'
+    ),
+    'serviceTypeData.service.js': fs.readFileSync(
+        'app_client/all/services/serviceTypeData.service.js',
         'utf-8'
     ),
     'audit.service.js': fs.readFileSync('app_client/all/services/audit.service.js', 'utf-8'),
@@ -64,8 +72,8 @@ var combinedCode = uglifyJs.minify({
     'login.controller.js': fs.readFileSync('app_client/auth/login/login.controller.js', 'utf-8'),
 
     'nav.directive.js': fs.readFileSync('app_client/all/directives/nav/nav.directive.js', 'utf-8'),
-    
-    'dbData.service.js' : fs.readFileSync('app_client/all/services/dbData.service.js', 'utf-8')
+
+    'dbData.service.js': fs.readFileSync('app_client/all/services/dbData.service.js', 'utf-8')
 });
 fs.writeFile('public/angular/autoservice.min.js', combinedCode.code, function(error) {
     if (error) console.log(error);
@@ -108,7 +116,6 @@ app.use('/api/register', registerRouter);
 app.use('/api/services', serviceRouter);
 app.use('/api/inventory', inventoryRouter);
 app.use('/api/db', dbRouter);
-app.use('/api/serviceTypes', serviceTypeRouter);
 app.use('/api/serviceTypes', serviceTypeRouter);
 app.use('/api/audit', auditRouter);
 app.use('/api/bot', botRouter);

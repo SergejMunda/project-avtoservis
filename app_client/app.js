@@ -43,6 +43,11 @@
                 controller: 'dbPageCtrl',
                 controllerAs: 'vm'
             })
+            .when('/serviceTypes', {
+                templateUrl: 'serviceType/serviceType.view.html',
+                controller: 'serviceTypeCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
