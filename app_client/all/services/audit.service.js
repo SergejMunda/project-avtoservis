@@ -1,7 +1,6 @@
 (function() {
     function audit($http, authentication) {
         var log = function(page) {
-            console.log('test');
             data = {
                 time: Date.now(),
                 user: authentication.logedin()
@@ -12,8 +11,12 @@
             return $http.post('/api/audit', data);
         };
 
+        var sendMessage = function(message) {
+            return $http.post('/api/bot', { text: message });
+        };
         return {
-            log: log
+            log: log,
+            sendMessage: sendMessage
         };
     }
     audit.$inject = ['$http', 'authentication'];

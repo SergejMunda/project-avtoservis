@@ -21,6 +21,7 @@ const inventoryRouter = require('./api/routes/inventory');
 const dbRouter = require('./api/routes/db');
 const serviceTypeRouter = require('./api/routes/serviceType');
 const auditRouter = require('./api/routes/audience');
+const botRouter = require('./api/routes/bot');
 
 var uglifyJs = require('uglify-js');
 var fs = require('fs');
@@ -108,7 +109,9 @@ app.use('/api/services', serviceRouter);
 app.use('/api/inventory', inventoryRouter);
 app.use('/api/db', dbRouter);
 app.use('/api/serviceTypes', serviceTypeRouter);
+app.use('/api/serviceTypes', serviceTypeRouter);
 app.use('/api/audit', auditRouter);
+app.use('/api/bot', botRouter);
 app.use(function(req, res) {
     res.sendFile(path.join(__dirname, 'app_client', 'index.html'));
 });
