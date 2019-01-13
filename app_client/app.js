@@ -37,6 +37,11 @@
                 controller: 'contactCtrl',
                 controllerAs: 'vm'
             })
+            .when('/db', {
+                templateUrl: 'dbPage/dbPage.view.html',
+                controller: 'dbPageCtrl',
+                controllerAs: 'vm'
+            })
             .otherwise({ redirectTo: '/' });
 
         //Remove #:
