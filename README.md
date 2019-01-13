@@ -149,5 +149,3 @@ when loading contact 0.5s
 
 The more data to load from databes when viewing inventory or services, the more time it takes for the page to load.
 This makes the loading of data the longest operation of all in the application.
-
-Edge browser is a bit slower than Opera.
