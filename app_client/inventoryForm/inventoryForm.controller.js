@@ -1,5 +1,5 @@
 (function() {
-    function inventoryFormCtrl(inventoryData, $uibModalInstance, inventoryDetails) {
+    function inventoryFormCtrl(inventoryData, $uibModalInstance, inventoryDetails, audit) {
         var vm = this;
         vm.title = 'Inventory';
         vm.msg = 'Searching inventory...';
@@ -44,8 +44,9 @@
                 );
             }
         };
+        audit.log('inventoryForm');
     }
-    inventoryFormCtrl.$inject = ['inventoryData', '$uibModalInstance', 'inventoryDetails'];
+    inventoryFormCtrl.$inject = ['inventoryData', '$uibModalInstance', 'inventoryDetails', 'audit'];
 
     /* global angular */
     angular.module('autoService').controller('inventoryFormCtrl', inventoryFormCtrl);

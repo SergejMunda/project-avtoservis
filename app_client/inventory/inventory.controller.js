@@ -1,5 +1,5 @@
 (function() {
-    function inventoryCtrl(inventoryData, $uibModal) {
+    function inventoryCtrl(inventoryData, $uibModal, audit) {
         var vm = this;
         vm.title = 'Inventory';
         vm.msg = 'Searching inventory data...';
@@ -101,8 +101,9 @@
                 console.log(response.e);
             }
         );
+        audit.log('inventory');
     }
-    inventoryCtrl.$inject = ['inventoryData', '$uibModal'];
+    inventoryCtrl.$inject = ['inventoryData', '$uibModal', 'audit'];
 
     /* global angular */
     angular.module('autoService').controller('inventoryCtrl', inventoryCtrl);

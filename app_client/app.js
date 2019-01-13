@@ -1,6 +1,7 @@
 (function() {
     //specification of the router provider.
-    function provider($routeProvider, $locationProvider) {
+    function provider($routeProvider, $locationProvider, $httpProvider) {
+        $httpProvider.defaults.headers.get = { 'X-Frame-Options': 'DENY' };
         $routeProvider
             .when('/', {
                 templateUrl: 'frontPage/frontPage.view.html',
@@ -56,5 +57,5 @@
     /* global angular */
     angular
         .module('autoService', ['ngRoute', 'ui.bootstrap'])
-        .config(['$routeProvider', '$locationProvider', provider]);
+        .config(['$routeProvider', '$locationProvider', '$httpProvider', provider]);
 })();

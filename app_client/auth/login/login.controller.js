@@ -1,5 +1,5 @@
 (function() {
-    function loginCtrl(authentication, $location) {
+    function loginCtrl(authentication, $location, audit) {
         var vm = this;
 
         vm.loginData = {
@@ -34,8 +34,9 @@
                 }
             );
         };
+        audit.log('login');
     }
-    loginCtrl.$inject = ['authentication', '$location'];
+    loginCtrl.$inject = ['authentication', '$location', 'audit'];
 
     /* global angular */
     angular.module('autoService').controller('loginCtrl', loginCtrl);

@@ -20,19 +20,19 @@ findTypes = function(name) {
 
 module.exports.delete = function(req, res) {
     Service.deleteMany({}, function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         // deleted at most one tank document
     });
     User.deleteMany({}, function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         // deleted at most one tank document
     });
     Inventory.deleteMany({}, function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         // deleted at most one tank document
     });
     ServiceType.deleteMany({}, function(err) {
-        if (err) return handleError(err);
+        if (err) return res.status(404).send(err);
         // deleted at most one tank document
     });
     res.sendStatus(200);

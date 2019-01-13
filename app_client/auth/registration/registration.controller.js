@@ -1,5 +1,5 @@
 (function() {
-    function registrationCtrl($location, authentication) {
+    function registrationCtrl($location, authentication, audit) {
         var vm = this;
 
         vm.registerData = {
@@ -34,8 +34,9 @@
                 }
             );
         };
+        audit.log('registration');
     }
-    registrationCtrl.$inject = ['$location', 'authentication'];
+    registrationCtrl.$inject = ['$location', 'authentication', 'audit'];
 
     /* global angular */
     angular.module('autoService').controller('registrationCtrl', registrationCtrl);
