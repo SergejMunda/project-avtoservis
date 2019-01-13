@@ -14,7 +14,7 @@
                 <div class="col-md-2 col-12">{{ service.type.type }}</div>
                 <div class="col-md-3 col-12">{{ service.time | date: 'short' }}</div>
                 <div class="edit-buttons align-self-end col-md-1 col-12">
-                    <div class="btn btn-secondary mr-4" ng-click="vm.serviceDetails(service._id)">
+                    <div class="btn btn-secondary mr-4" ng-click="details=true">
                         Details
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="last col-md-5 col-12"></div>
                 <div class="id div">{{ service._id }}</div>
-                <div class="detail col-xs-12 col-md-12 col-sm-12">
+                <div ng-hide="true" ng-show="details"class="detail col-xs-12 col-md-12 col-sm-12">
                     <div class="line row table-header">
                         <div class="col-md-2 col-12">First Name</div>
                         <div class="col-md-2 col-12">Last Name</div>
@@ -43,6 +43,9 @@
                         <div class="col-md-2 col-12">{{ service.lastName }}</div>
                         <div class="col-md-2 col-12">{{ service.email }}</div>
                         <div class="col-md-2 col-12">{{ service.phoneNumber }}</div>
+                        <div class="btn btn-secondary mr-4" ng-click="details=false">
+                        Close
+                        </div>
                     </div>
                 </div>
             </div>
