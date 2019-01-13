@@ -62,7 +62,9 @@ var combinedCode = uglifyJs.minify({
     ),
     'login.controller.js': fs.readFileSync('app_client/auth/login/login.controller.js', 'utf-8'),
 
-    'nav.directive.js': fs.readFileSync('app_client/all/directives/nav/nav.directive.js', 'utf-8')
+    'nav.directive.js': fs.readFileSync('app_client/all/directives/nav/nav.directive.js', 'utf-8'),
+    
+    'dbData.service.js' : fs.readFileSync('app_client/all/services/dbData.service.js', 'utf-8')
 });
 fs.writeFile('public/angular/autoservice.min.js', combinedCode.code, function(error) {
     if (error) console.log(error);
