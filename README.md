@@ -127,25 +127,25 @@ User must pick one of the types possible for service
     delete: service, serviceType, inventory
 
 
-### Page load times
+## Page load times
 
-# Opera:
-Initial page load lasts 1.2 seconds
-when loading inventory: 0.8s
-when loading services: 0.7s
-when loading database: 0.4s
-when loading service types: 0.7s
-when loading login/register 0.4s
-when loading contact 0.4s
+### Opera:
+- Initial page load lasts 1.2 seconds
+- when loading inventory: 0.8s
+- when loading services: 0.7s
+- when loading database: 0.4s
+- when loading service types: 0.7s
+- when loading login/register 0.4s
+- when loading contact 0.4s
 
-# Edge:
-Initial page load lasts 1.4 seconds
-when loading inventory: 1.0s
-when loading services: 0.9s
-when loading database: 0.5s
-when loading service types: 0.8s
-when loading login/register 0.6s
-when loading contact 0.5s
+### Edge:
+- Initial page load lasts 1.4 seconds
+- when loading inventory: 1.0s
+- when loading services: 0.9s
+- when loading database: 0.5s
+- when loading service types: 0.8s
+- when loading login/register 0.6s
+- when loading contact 0.5s
 
 The more data to load from databes when viewing inventory or services, the more time it takes for the page to load.
 This makes the loading of data the longest operation of all in the application.
