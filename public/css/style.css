@@ -25,7 +25,7 @@
 
 .detail {
     overflow-y: visible;
-    display: none;
+    display: visible;
 }
 
 .id {
