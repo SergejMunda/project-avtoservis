@@ -63,7 +63,7 @@
         <div class="form-group">
             <label for="type">Type</label>
             <select class="form-control" id="item" name="type" ng-model="vm.data.type">
-                <option ng-repeat="service in vm.data.serviceTypes" value="service._id"
+                <option ng-repeat="service in vm.data.serviceTypes" value="{{ service._id }}"
                     >{{ service.type }}
                 </option>
             </select>
