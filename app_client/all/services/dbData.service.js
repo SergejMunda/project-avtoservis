@@ -1,14 +1,14 @@
 (function(){
     function dbData($http){
-        var data = function(page){
+        var data = function(){
             return $http.get('/api/db');
             
         };
         var dbDelete = function(){
             return $http.delete('/api/db');
         };
-        var dbAdd = function(data){
-            return $http.post('/api/db',data);
+        var dbAdd = function(){
+            return $http.post('/api/db');
         };
         
         return {

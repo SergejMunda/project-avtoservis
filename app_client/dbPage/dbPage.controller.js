@@ -1,39 +1,33 @@
 (function() {
     function dbPageCtrl(dbData, $uibModal) {
         var vm = this;
-        vm.title = 'Welcome';
-        vm.msg = 'Loading dbPage';
+        vm.title = 'Db';
+        vm.msg = '';
         vm.error = '';
     
         vm.deleteAll = function(){
             dbData.dbDelete().then(
-                function succes(response){
+                function succes(){
                     vm.msg = 'Db deleted sucessfully';
                     setTimeout(function(){
                         vm.msg='';
                         
                     },3000);
-                    },
-                    function error(response){
-                        vm.msg = 'Failed to delete';
-                        console.log(response.e);
-                    }
-                );
+                },
+                function error(){
+                    vm.msg = 'Failed to delete';
+                    //console.log(response.e);
+                }
+            );
                 
         };
-        dbData.db().then(
-            function success(response){
-                console.log(response);
-                vm.msg = response.data.docs.length > 0 ? '' : 'No data in db';
-                vm.data = {
-                    db : response.data.docs
-                };
-            },
-            function error(response){
-                vm.msg = 'An error occured when fetching data from db';
-                console.log(response.e);
-            }
-        );
+        vm.loadPresets = function(){
+            dbData.dbAdd().then(
+                vm.msg = "Db loaded sucessfully"
+                       
+            );
+        }
+       
     }
 
     
