@@ -154,5 +154,7 @@ This makes the loading of data the longest operation of all in the application.
 
 ## Jmeter load testing
 Results are stored in [THIS](https://bitbucket.org/bc7608/sp-v1/src/master/LoadTests/AvtoServisReport.xml) file.
-Summary: our application can process approximately 70 users at once, any more and we start getting either 
+Summary:The tests were run on a computer with a i7 3.2Gzz processor and 8 Gb of RAM. 
+The application was run on the Colud9 VM with 512 Mb of Ram and 2 Gb of diskspace.
+Our application can process approximately 70 users at once, any more and we start getting either 
 302 response code or no response code and a java.net.SocketException.
