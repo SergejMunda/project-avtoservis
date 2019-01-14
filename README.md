@@ -151,3 +151,8 @@ User must pick one of the types possible for service
 
 The more data to load from databes when viewing inventory or services, the more time it takes for the page to load.
 This makes the loading of data the longest operation of all in the application.
+
+## Jmeter load testing
+Results are stored in [THIS](https://bitbucket.org/bc7608/sp-v1/src/master/LoadTests/AvtoServisReport.xml) file.
+Summary: our application can process approximately 70 users at once, any more and we start getting either 
+302 response code or no response code and a java.net.SocketException.
