@@ -10,7 +10,7 @@
     "npm": "~6.4.1"
   },
   "dependencies": {
-    "angular": "^1.7.5",
+    "angular": "^1.8.3",
     "angular-mapboxgl-directive": "^0.46.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
